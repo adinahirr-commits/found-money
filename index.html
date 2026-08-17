@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>המדריך לכספים האבודים | אמא משקיעה</title>
+<meta name="description" content="מדריך של עמוד אחד עם תסריטים מוכנים להעתקה: לשלם פחות על סלולר, אינטרנט, בנק, אשראי וביטוחים, ולהפוך את הכסף שמצאת להשקעה לעתיד שלך.">
+<meta property="og:title" content="המדריך לכספים האבודים | אמא משקיעה">
+<meta property="og:description" content="בין 300 ל 700 ש״ח בחודש מחכים לך בתוך החשבונות הקיימים שלך. תסריטים מוכנים, לינקים ישירים, ומחשבון שמראה כמה זה שווה בעתיד.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#FBFAF7; --ink:#191A2E; --ink-soft:#6B6B7B;
+  --pink:#EF55A5; --lime:#CCD537; --vista:#8C9EFF; --sky:#BEE0F2;
+  --pink-soft:#FCE1EF; --line:#ECE7DF;
+  --radius-card:22px; --shadow:0 18px 40px -28px rgba(25,26,46,.18);
+  --fs:1rem;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Heebo',sans-serif; background:var(--canvas); color:var(--ink);
+  font-size:var(--fs); line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+body.big-text{--fs:1.15rem}
+body.high-contrast{--ink-soft:#3a3a4a; --line:#c9c2b6}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;font-weight:700;color:var(--pink);text-transform:uppercase}
+h1{font-weight:900;font-size:clamp(2rem,7vw,3.2rem);line-height:1.15;letter-spacing:-.02em}
+h2{font-weight:800;font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.25;letter-spacing:-.02em}
+h3{font-weight:800;font-size:1.15rem}
+.muted{color:var(--ink-soft)}
+
+/* ---- sticky counter ---- */
+#sticky{
+  position:fixed;top:0;right:0;left:0;z-index:50;
+  background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 16px;font-weight:700;font-size:.95rem;
+  transform:translateY(-110%);transition:transform .35s ease;
+}
+#sticky.show{transform:translateY(0)}
+#sticky .amount{color:var(--lime);font-weight:900;font-size:1.1rem}
+#sticky a{color:var(--sky);font-weight:500;font-size:.82rem;text-decoration:underline;margin-inline-start:6px}
+
+/* ---- hero ---- */
+.hero{padding:56px 0 40px;text-align:center;position:relative;overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;z-index:0;opacity:.5;pointer-events:none}
+.hero .b1{width:220px;height:220px;background:var(--pink-soft);top:-70px;right:-70px}
+.hero .b2{width:170px;height:170px;background:var(--sky);bottom:-50px;left:-50px}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{margin:14px 0 16px}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--lime) 62%)}
+.hero p{max-width:34em;margin:0 auto}
+.hero .intro{margin-top:18px;font-size:1.05rem}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-block;border:none;border-radius:100px;font-weight:800;
+  padding:15px 34px;font-size:1.05rem;text-decoration:none;transition:all .18s ease;
+}
+.btn-pink{background:var(--pink);color:var(--ink)}
+.btn-pink:hover{filter:brightness(.95);transform:translateY(-1px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);font-weight:700;padding:10px 22px;font-size:.95rem}
+:focus-visible{outline:3px solid var(--vista);outline-offset:2px;border-radius:6px}
+
+/* ---- steps intro ---- */
+.how{padding:36px 0}
+.how .steps{display:grid;gap:12px;margin-top:20px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.step .num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--pink-soft);color:var(--ink);font-weight:900;display:flex;align-items:center;justify-content:center}
+
+/* ---- stations ---- */
+.stations{padding:28px 0 20px}
+.station{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);
+  margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden;
+}
+.station.done{border-color:var(--lime);border-width:2px}
+.st-head{
+  width:100%;background:none;border:none;text-align:right;
+  display:flex;align-items:center;gap:12px;padding:18px 20px;
+}
+.st-head .emoji{font-size:1.6rem;flex-shrink:0}
+.st-head .titles{flex:1;min-width:0}
+.st-head .t{font-weight:800;font-size:1.08rem;line-height:1.3}
+.st-head .s{font-size:.85rem;color:var(--ink-soft);line-height:1.4}
+.st-head .chev{flex-shrink:0;transition:transform .25s;color:var(--ink-soft)}
+.station[data-open="1"] .chev{transform:rotate(180deg)}
+.st-head .badge{
+  flex-shrink:0;background:var(--lime);color:var(--ink);font-weight:800;font-size:.78rem;
+  border-radius:100px;padding:3px 10px;display:none;
+}
+.station.done .badge{display:inline-block}
+.st-body{display:none;padding:0 20px 22px;border-top:1px solid var(--line)}
+.station[data-open="1"] .st-body{display:block}
+.st-body .why{padding:16px 0 4px;font-size:.98rem}
+.st-body ul{margin:10px 0 0 0;padding-inline-start:20px}
+.st-body li{margin-bottom:6px}
+
+/* script box */
+.script{
+  background:var(--canvas);border:1.5px dashed var(--vista);border-radius:16px;
+  padding:16px;margin-top:16px;position:relative;
+}
+.script .label{font-size:.75rem;letter-spacing:.12em;font-weight:700;color:var(--vista);text-transform:uppercase;margin-bottom:6px}
+.script p{font-size:.95rem;white-space:pre-line}
+.copy-btn{
+  margin-top:12px;background:var(--ink);color:#fff;border:none;border-radius:100px;
+  padding:9px 20px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;
+}
+.copy-btn.copied{background:var(--lime);color:var(--ink)}
+
+/* link rows */
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.link-chip{
+  display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  background:var(--sky);color:var(--ink);font-weight:700;font-size:.88rem;
+  border-radius:100px;padding:8px 16px;transition:filter .15s;
+}
+.link-chip:hover{filter:brightness(.95)}
+.link-chip.gov{background:var(--pink-soft)}
+
+/* saved input */
+.saved{
+  margin-top:18px;background:var(--canvas);border-radius:16px;padding:14px 16px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.saved label{font-weight:700;font-size:.92rem}
+.saved input{
+  width:90px;border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;
+  font-family:inherit;font-size:1rem;font-weight:700;text-align:center;background:#fff;color:var(--ink);
+}
+.saved input:focus{border-color:var(--pink);outline:none}
+.saved .save-btn{background:var(--pink);color:var(--ink);border:none;border-radius:100px;padding:9px 20px;font-weight:800;font-size:.9rem}
+.tip{margin-top:14px;background:var(--pink-soft);border-radius:14px;padding:12px 16px;font-size:.9rem}
+.tip b{font-weight:800}
+
+/* ---- calculator ---- */
+.calc-section{background:var(--vista);padding:clamp(48px,8vw,80px) 0;margin-top:36px}
+.calc-section h2,.calc-section p{color:var(--ink)}
+.calc-card{background:#fff;border-radius:var(--radius-card);padding:26px 22px;margin-top:24px;box-shadow:var(--shadow)}
+.calc-row{margin-bottom:22px}
+.calc-row label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:.95rem;margin-bottom:8px}
+.calc-row label output{font-weight:900;font-size:1.15rem;color:var(--pink)}
+input[type=range]{width:100%;accent-color:var(--pink);height:32px}
+.use-found{
+  display:none;margin:0 0 18px;background:var(--pink-soft);border:none;border-radius:100px;
+  padding:10px 20px;font-weight:700;font-size:.9rem;color:var(--ink);
+}
+.use-found.show{display:inline-block}
+.result{
+  text-align:center;background:var(--ink);border-radius:18px;padding:26px 20px;margin-top:8px;color:#fff;
+}
+.result .lead-line{font-size:1rem;font-weight:500;opacity:.9}
+.result .big{font-size:clamp(2.2rem,9vw,3.4rem);font-weight:900;color:var(--lime);letter-spacing:-.02em;line-height:1.2;margin:6px 0}
+.result .split{font-size:.88rem;opacity:.85;margin-top:8px}
+.disclaimer{font-size:.78rem;color:var(--ink);opacity:.75;margin-top:16px;line-height:1.6}
+
+/* ---- CTA ---- */
+.cta{padding:clamp(48px,8vw,80px) 0;text-align:center}
+.cta .card{background:var(--pink-soft);border-radius:var(--radius-card);padding:36px 24px}
+.cta h2{margin-bottom:12px}
+.cta p{max-width:30em;margin:0 auto 22px}
+
+/* ---- footer ---- */
+footer{border-top:1px solid var(--line);padding:28px 0 90px;text-align:center}
+footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px}
+
+/* accessibility widget */
+#a11y-btn{
+  position:fixed;bottom:18px;left:18px;z-index:60;width:46px;height:46px;border-radius:50%;
+  background:var(--ink);color:#fff;border:none;font-size:1.2rem;box-shadow:var(--shadow);
+}
+#a11y-menu{
+  position:fixed;bottom:72px;left:18px;z-index:60;background:#fff;border:1px solid var(--line);
+  border-radius:16px;padding:12px;display:none;flex-direction:column;gap:8px;box-shadow:var(--shadow);
+}
+#a11y-menu.open{display:flex}
+#a11y-menu button{background:var(--canvas);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:.85rem;font-weight:700;color:var(--ink)}
+
+@media (min-width:640px){
+  .saved input{width:110px}
+}
+</style>
+</head>
+<body>
+
+<div id="sticky" aria-live="polite">
+  <span>מצאת כבר</span><span class="amount" id="sticky-amount">0 ₪</span><span>בחודש</span>
+  <a href="#calc">כמה זה שווה בעתיד?</a>
+</div>
+
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap">
+    <div class="eyebrow">אמא משקיעה · המדריך לכספים האבודים</div>
+    <h1>בין 300 ל 700 ש״ח בחודש <span class="hl">מחכים לך</span> בתוך החשבונות שכבר יש לך</h1>
+    <p class="intro">היי, אני עדי 💛<br>
+    בעמוד הזה יש את כל התסריטים המוכנים שעזרו לי לקבל <b>5,640 ש״ח בשנה</b> בלי לקום מהכיסא. פשוט מעתיקים, מחייגים, ומסמנות וי. את כל מה שמצאת נכניס בסוף למחשבון, ותראי מה הכסף הזה יכול לעשות בשבילך.</p>
+    <p style="margin-top:22px"><a href="#stations" class="btn btn-pink">יאללה, בואי נמצא כסף</a></p>
+  </div>
+</header>
+
+<section class="how">
+  <div class="wrap">
+    <h2>ככה זה עובד</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><b>בוחרים תחנה.</b> כל תחנה היא שיחה אחת קצרה או לחיצה אחת. אפשר לעשות אחת ביום.</div></div>
+      <div class="step"><div class="num">2</div><div><b>מעתיקים את התסריט ומחייגים.</b> הכל כתוב מילה במילה. את רק קוראת.</div></div>
+      <div class="step"><div class="num">3</div><div><b>רושמות כמה מצאת.</b> המונה למעלה סופר, והמחשבון בסוף מראה לך למה זה שווה הרבה יותר ממה שנדמה.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="stations" id="stations">
+  <div class="wrap">
+    <h2 style="margin-bottom:6px">7 תחנות. כל אחת שווה כסף.</h2>
+    <p class="muted" style="margin-bottom:22px">לחצי על תחנה כדי לפתוח אותה</p>
+
+    <!-- 1. cellular -->
+    <div class="station" id="st-cell">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">📱</span>
+        <span class="titles"><span class="t">הסלולר שלך</span><span class="s">שיחה של 5 דקות · חיסכון ממוצע 30 עד 60 ₪ בחודש</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">רוב המסלולים היום עולים 20 עד 40 ₪. אם את משלמת יותר, את פשוט משלמת על ותק. שיחה אחת למחלקת השימור מסדרת את זה.</p>
+        <div class="script">
+          <div class="label">התסריט שלך · העתיקי וקראי</div>
+          <p id="script-cell">היי, אני לקוחה שלכם כבר תקופה ואני משלמת היום [הסכום שלך] ₪ בחודש.
+ראיתי שיש היום מסלולים דומים ב 25 עד 30 ₪.
+אני רוצה לעבור למסלול משתלם יותר אצלכם, או לקבל הצעה שתגרום לי להישאר.
+מה אתם יכולים להציע לי?</p>
+          <button class="copy-btn" data-copy="script-cell">📋 העתקת התסריט</button>
+        </div>
+        <div class="tip"><b>טיפ של אלופות:</b> המשפט "אני שוקלת לעבור לחברה אחרת" מעביר אותך אוטומטית לנציג שימור, ושם ההצעות הכי טובות.</div>
+        <div class="links">
+          <a class="link-chip" href="tel:%2A054">📞 פרטנר *054</a>
+          <a class="link-chip" href="tel:%2A123">📞 סלקום *123</a>
+          <a class="link-chip" href="tel:%2A8888">📞 גולן *8888</a>
+          <a class="link-chip" href="tel:%2A5100">📞 הוט מובייל *5100</a>
+        </div>
+        <div class="saved">
+          <label for="save-cell">כמה הורדת בחודש?</label>
+          <input type="number" id="save-cell" min="0" max="2000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="cell">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. internet/tv -->
+    <div class="station" id="st-net">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">🌐</span>
+        <span class="titles"><span class="t">אינטרנט וטלוויזיה</span><span class="s">שיחה של 10 דקות · חיסכון ממוצע 40 עד 80 ₪ בחודש</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">זה הסעיף שבו אני הורדתי 70 ₪ בחודש בשיחה אחת. חברות התקשורת שומרות את המבצעים הטובים ללקוחות שמתקשרים ומבקשים.</p>
+        <div class="script">
+          <div class="label">התסריט שלך · העתיקי וקראי</div>
+          <p id="script-net">שלום, אני לקוחה שלכם ומשלמת היום [הסכום שלך] ₪ בחודש על החבילה.
+בדקתי מחירים אצל מתחרים וההצעות שקיבלתי נמוכות משמעותית.
+אני מעדיפה להישאר אצלכם, אז אשמח שתתאימו לי את המחיר או שתציעו לי חבילה משתלמת יותר.
+מה האפשרויות שלי?</p>
+          <button class="copy-btn" data-copy="script-net">📋 העתקת התסריט</button>
+        </div>
+        <div class="tip"><b>טיפ של אלופות:</b> בדקי בחשבונית מה את בכלל צריכה. ערוצי ספורט שאף אחד לא רואה? ממיר שני שמונח בארון? כל אחד כזה שווה 10 עד 30 ₪ בחודש.</div>
+        <div class="links">
+          <a class="link-chip" href="tel:199">📞 בזק 199</a>
+          <a class="link-chip" href="tel:%2A6900">📞 הוט *6900</a>
+          <a class="link-chip" href="tel:%2A2080">📞 יס *2080</a>
+          <a class="link-chip" href="tel:%2A054">📞 פרטנר *054</a>
+        </div>
+        <div class="saved">
+          <label for="save-net">כמה הורדת בחודש?</label>
+          <input type="number" id="save-net" min="0" max="2000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="net">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. bank -->
+    <div class="station" id="st-bank">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">🏦</span>
+        <span class="titles"><span class="t">עמלות הבנק</span><span class="s">שיחה או הודעה באפליקציה · חיסכון ממוצע 20 עד 40 ₪ בחודש</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">יש לך זכות חוקית לעבור ל"מסלול בסיסי" בעמלות: מחיר קבוע ונמוך במקום עמלה על כל פעולה. הבנק חייב לאשר. רוב האנשים פשוט לא יודעים שזה קיים.</p>
+        <div class="script">
+          <div class="label">התסריט שלך · העתיקי ושלחי גם בצ׳אט של האפליקציה</div>
+          <p id="script-bank">שלום, אני מבקשת לעבור למסלול העמלות הבסיסי בחשבון שלי, בהתאם להוראות בנק ישראל.
+בנוסף, אשמח לדעת אילו עמלות נגבו ממני בשנה האחרונה ומה ניתן להוזיל או לבטל.
+תודה!</p>
+          <button class="copy-btn" data-copy="script-bank">📋 העתקת התסריט</button>
+        </div>
+        <div class="tip"><b>טיפ של אלופות:</b> את ההודעה הזאת אפשר לשלוח בצ׳אט של אפליקציית הבנק, בלי להמתין לנציג בכלל. שלחי ותמשיכי ביום שלך.</div>
+        <div class="saved">
+          <label for="save-bank">כמה הורדת בחודש?</label>
+          <input type="number" id="save-bank" min="0" max="2000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="bank">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. credit cards -->
+    <div class="station" id="st-card">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">💳</span>
+        <span class="titles"><span class="t">כרטיסי האשראי</span><span class="s">שיחה של 5 דקות לכל כרטיס · חיסכון ממוצע 15 עד 30 ₪ לכרטיס</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">דמי כרטיס הם עמלה שכמעט תמיד אפשר לקבל עליה פטור, פשוט כי ביקשת. יש לך יותר מכרטיס אחד? עוד יותר שווה. אני הורדתי 60 ₪ בחודש מ 3 כרטיסים.</p>
+        <div class="script">
+          <div class="label">התסריט שלך · העתיקי וקראי</div>
+          <p id="script-card">היי, אני מחזיקה בכרטיס שלכם ומשלמת דמי כרטיס כל חודש.
+אני מבקשת פטור קבוע מדמי הכרטיס.
+אם אין אפשרות לפטור, אני שוקלת לבטל את הכרטיס ולהתרכז בכרטיס אחר שיש לי.
+מה אתם יכולים לעשות בשבילי?</p>
+          <button class="copy-btn" data-copy="script-card">📋 העתקת התסריט</button>
+        </div>
+        <div class="tip"><b>איפה מתקשרים?</b> מספר שירות הלקוחות מודפס על גב הכרטיס שלך. הפכי את הכרטיס וזהו 😉 וכשכבר על הקו: בקשי פטור גם על "דמי גביית תשלום נדחה" אם יש.</div>
+        <div class="saved">
+          <label for="save-card">כמה הורדת בחודש?</label>
+          <input type="number" id="save-card" min="0" max="2000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="card">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. subscriptions -->
+    <div class="station" id="st-subs">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">👻</span>
+        <span class="titles"><span class="t">המנויים הנסתרים</span><span class="s">5 דקות מהטלפון · אצלי זה היה שווה 300 ₪ בחודש</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">אפליקציות שנרשמת אליהן פעם, ניסיון חינם שהפך לתשלום, אפליקציה שהילדים הורידו. הכסף הזה יורד כל חודש בשקט. שתי לחיצות ורואים הכל.</p>
+        <ul>
+          <li><b>יש לך אייפון?</b> לחצי על הלינק הוורוד למטה ותראי את כל המנויים שלך במקום אחד. בטלי כל מה שלא בשימוש.</li>
+          <li><b>יש לך אנדרואיד?</b> אותו דבר בדיוק, בלינק של גוגל.</li>
+          <li><b>הצעד המנצח:</b> פתחי את פירוט האשראי של 3 החודשים האחרונים וחפשי חיובים קטנים שחוזרים על עצמם. כל שם שאת לא מזהה, בדקי אותו.</li>
+        </ul>
+        <div class="links">
+          <a class="link-chip gov" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">🍎 המנויים שלי באייפון</a>
+          <a class="link-chip gov" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">🤖 המנויים שלי באנדרואיד</a>
+        </div>
+        <div class="tip"><b>טיפ של אלופות:</b> מנוי שאת רוצה לשמור אבל משלמת עליו חודשי? בדקי אם יש מסלול שנתי. ברוב האפליקציות זה חיסכון של 30 עד 40 אחוז.</div>
+        <div class="saved">
+          <label for="save-subs">כמה ביטלת בחודש?</label>
+          <input type="number" id="save-subs" min="0" max="2000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="subs">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. insurance -->
+    <div class="station" id="st-ins">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">🛡️</span>
+        <span class="titles"><span class="t">הביטוחים שלך</span><span class="s">10 דקות באתר המדינה · חיסכון ממוצע מאות ₪ בשנה</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">"הר הביטוח" הוא אתר של משרד האוצר שמראה לך בחינם את כל הביטוחים הרשומים על שמך. הרבה נשים מגלות שם ביטוחים כפולים: למשל ביטוח בריאות פרטי שמכסה בדיוק את מה שיש כבר בקופת החולים.</p>
+        <ul>
+          <li>נכנסות עם תעודת זהות, מקבלות קוד לנייד, ורואים הכל.</li>
+          <li>מצאת שני ביטוחים שמכסים אותו דבר? זה בדיוק הכסף האבוד שלך.</li>
+          <li>העתיקי את התסריט ושלחי לסוכן או לחברת הביטוח.</li>
+        </ul>
+        <div class="script">
+          <div class="label">התסריט שלך · לשיחה או להודעה לסוכן</div>
+          <p id="script-ins">היי, עשיתי בדיקה בהר הביטוח וראיתי שיש לי [שם הביטוח] וגם [שם הביטוח הנוסף].
+אשמח להבין ממך: מה כל אחד מהם מכסה בפועל, והאם יש ביניהם כפל.
+אם יש כפל, אני מבקשת לבטל את המיותר ולקבל אישור על הביטול במייל.
+תודה!</p>
+          <button class="copy-btn" data-copy="script-ins">📋 העתקת התסריט</button>
+        </div>
+        <div class="links">
+          <a class="link-chip gov" href="https://harb.cma.gov.il" target="_blank" rel="noopener">⛰️ הר הביטוח · אתר המדינה</a>
+        </div>
+        <div class="saved">
+          <label for="save-ins">כמה הורדת בחודש?</label>
+          <input type="number" id="save-ins" min="0" max="2000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="ins">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. har hakesef -->
+    <div class="station" id="st-har">
+      <button class="st-head" aria-expanded="false">
+        <span class="emoji">💰</span>
+        <span class="titles"><span class="t">בונוס: כסף שכבר שלך ורק מחכה</span><span class="s">5 דקות · יש ישראלים שמצאו שם עשרות אלפי ₪</span></span>
+        <span class="badge">✓ בוצע</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="st-body">
+        <p class="why">"הר הכסף" של משרד האוצר מאתר בחינם חשבונות בנק רדומים, קופות גמל ישנות וכספי ביטוח על שמך ועל שם קרובים שנפטרו. זה ממש כסף אבוד, פשוטו כמשמעו, והמדינה בנתה אתר כדי להחזיר לך אותו.</p>
+        <ul>
+          <li>נכנסות עם תעודת זהות, והמערכת סורקת את כל הגופים הפיננסיים.</li>
+          <li>נמצא משהו? האתר מכוון אותך בדיוק איך למשוך אותו.</li>
+          <li>שווה לעשות גם עבור ההורים שלך.</li>
+        </ul>
+        <div class="links">
+          <a class="link-chip gov" href="https://itur.mof.gov.il" target="_blank" rel="noopener">⛰️ הר הכסף · אתר המדינה</a>
+        </div>
+        <div class="saved">
+          <label for="save-har">מצאת סכום חד פעמי? רשמי כמה זה בחלוקה לחודש</label>
+          <input type="number" id="save-har" min="0" max="10000" inputmode="numeric" placeholder="₪">
+          <button class="save-btn" data-station="har">מצאתי! 🎉</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- calculator -->
+<section class="calc-section" id="calc">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--ink)">החלק הכי חשוב במדריך</div>
+    <h2>ועכשיו, הקסם: מה הכסף שמצאת יכול לעשות בשבילך</h2>
+    <p style="margin-top:10px">לחסוך זה שלב אחד. אמא משקיעה לוקחת את הכסף שהתפנה ושמה אותו לעבוד בשבילה. ככה נראית ריבית דריבית על הכספים האבודים שלך:</p>
+    <div class="calc-card">
+      <button class="use-found" id="use-found">✨ להשתמש בסכום שמצאתי במדריך (<span id="found-in-btn">0</span> ₪)</button>
+      <div class="calc-row">
+        <label for="c-monthly">כמה כסף אבוד מצאת בחודש? <output id="o-monthly">700 ₪</output></label>
+        <input type="range" id="c-monthly" min="100" max="2000" step="50" value="700">
+      </div>
+      <div class="calc-row">
+        <label for="c-years">לכמה שנים תשקיעי אותו? <output id="o-years">25 שנה</output></label>
+        <input type="range" id="c-years" min="5" max="40" step="1" value="25">
+      </div>
+      <div class="calc-row">
+        <label for="c-rate">תשואה שנתית ממוצעת <output id="o-rate">8%</output></label>
+        <input type="range" id="c-rate" min="2" max="12" step="0.5" value="8">
+      </div>
+      <div class="result" aria-live="polite">
+        <div class="lead-line">רק מהכספים האבודים שמצאת, תוכלי לייצר לעתיד שלך:</div>
+        <div class="big" id="r-total">665,718 ₪</div>
+        <div class="split">מתוכם הפקדת מהכיס <b id="r-deposited">210,000 ₪</b> · והריבית עשתה בשבילך <b id="r-profit">455,718 ₪</b></div>
+      </div>
+      <p class="disclaimer">* החישוב להמחשה בלבד ומבוסס על תשואה שנתית ממוצעת בהתבסס על נתוני עבר של שוקי ההון. תשואות עבר אינן מבטיחות תשואות עתיד. אין באמור ייעוץ השקעות, המלצה או תחליף לייעוץ המתחשב בנתונים ובצרכים האישיים שלך.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">הצעד הבא שלך</div>
+      <h2>רוצה לעשות את זה ביחד איתנו?</h2>
+      <p>מצאת את הכסף. עכשיו מגיע החלק שבאמת משנה את העתיד: לגרום לו לעבוד בשבילך. זה בדיוק מה שאנחנו עושות באמא משקיעה, צעד צעד, בגובה העיניים.</p>
+      <a class="btn btn-pink" id="cta-btn" href="https://wa.me/972509563781?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%93%D7%99%2C%20%D7%A1%D7%99%D7%99%D7%9E%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%9C%D7%9B%D7%A1%D7%A4%D7%99%D7%9D%20%D7%94%D7%90%D7%91%D7%95%D7%93%D7%99%D7%9D%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%9E%D7%A9%D7%99%D7%9A%20%D7%9C%D7%94%D7%A9%D7%A7%D7%A2%D7%95%D7%AA%20%F0%9F%92%9B">אני רוצה להמשיך איתכן 💛</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>המדריך נכתב באהבה על ידי עדי סומך · אמא משקיעה. המידע בעמוד זה הוא כללי בלבד ואינו מהווה ייעוץ פיננסי, ביטוחי או השקעות. מספרי הטלפון והלינקים נכונים למועד הפרסום.</p>
+    <p>העמוד תומך בניווט מקלדת ובהגדלת טקסט. נתקלת בקושי נגישות? כתבי לנו: mominvest10x@gmail.com</p>
+  </div>
+</footer>
+
+<button id="a11y-btn" aria-label="תפריט נגישות" title="נגישות">♿</button>
+<div id="a11y-menu" role="menu">
+  <button id="a11y-text">הגדלת טקסט</button>
+  <button id="a11y-contrast">ניגודיות מוגברת</button>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY='foundMoneyGuide.v1';
+  var state={savings:{}};
+  try{var raw=localStorage.getItem(STORAGE_KEY); if(raw) state=JSON.parse(raw)||state;}catch(e){}
+  if(!state.savings) state.savings={};
+
+  function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}}
+  function totalFound(){var t=0;for(var k in state.savings){t+=Number(state.savings[k])||0;}return Math.round(t);}
+  function fmt(n){return Math.round(n).toLocaleString('he-IL');}
+
+  /* accordions */
+  document.querySelectorAll('.st-head').forEach(function(head){
+    head.addEventListener('click',function(){
+      var st=head.closest('.station');
+      var open=st.getAttribute('data-open')==='1';
+      st.setAttribute('data-open',open?'0':'1');
+      head.setAttribute('aria-expanded',open?'false':'true');
+    });
+  });
+
+  /* copy buttons */
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.getAttribute('data-copy'));
+      var text=el.innerText;
+      function ok(){btn.classList.add('copied');btn.textContent='✓ הועתק! עכשיו רק לחייג';
+        setTimeout(function(){btn.classList.remove('copied');btn.textContent='📋 העתקת התסריט';},2500);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok,function(){fallback();});
+      }else{fallback();}
+      function fallback(){
+        var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);
+        ta.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(ta);
+      }
+    });
+  });
+
+  /* save buttons + sticky counter */
+  var sticky=document.getElementById('sticky');
+  var stickyAmount=document.getElementById('sticky-amount');
+  var useFoundBtn=document.getElementById('use-found');
+  var foundInBtn=document.getElementById('found-in-btn');
+
+  function refreshCounter(){
+    var t=totalFound();
+    stickyAmount.textContent=fmt(t)+' ₪';
+    if(t>0){sticky.classList.add('show');useFoundBtn.classList.add('show');foundInBtn.textContent=fmt(t);}
+    else{sticky.classList.remove('show');useFoundBtn.classList.remove('show');}
+  }
+
+  document.querySelectorAll('.save-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var key=btn.getAttribute('data-station');
+      var input=btn.closest('.saved').querySelector('input');
+      var val=Math.max(0,Number(input.value)||0);
+      state.savings[key]=val;
+      var st=btn.closest('.station');
+      if(val>0){st.classList.add('done');}else{st.classList.remove('done');delete state.savings[key];}
+      persist();refreshCounter();
+    });
+  });
+
+  /* restore saved values */
+  for(var k in state.savings){
+    var input=document.getElementById('save-'+k);
+    if(input){input.value=state.savings[k];
+      var st=document.getElementById('st-'+k);
+      if(st&&Number(state.savings[k])>0)st.classList.add('done');}
+  }
+  refreshCounter();
+
+  /* calculator */
+  var cm=document.getElementById('c-monthly'),cy=document.getElementById('c-years'),cr=document.getElementById('c-rate');
+  var om=document.getElementById('o-monthly'),oy=document.getElementById('o-years'),or_=document.getElementById('o-rate');
+  var rt=document.getElementById('r-total'),rd=document.getElementById('r-deposited'),rp=document.getElementById('r-profit');
+
+  function calc(){
+    var monthly=Number(cm.value),years=Number(cy.value),annual=Number(cr.value)/100;
+    om.textContent=fmt(monthly)+' ₪';
+    oy.textContent=years+' שנה';
+    or_.textContent=(annual*100).toLocaleString('he-IL',{maximumFractionDigits:1})+'%';
+    var r=annual/12,n=years*12;
+    var fv=r>0?monthly*((Math.pow(1+r,n)-1)/r):monthly*n;
+    var deposited=monthly*n;
+    rt.textContent=fmt(fv)+' ₪';
+    rd.textContent=fmt(deposited)+' ₪';
+    rp.textContent=fmt(fv-deposited)+' ₪';
+  }
+  [cm,cy,cr].forEach(function(el){el.addEventListener('input',calc);});
+  calc();
+
+  useFoundBtn.addEventListener('click',function(){
+    var t=totalFound();
+    if(t>0){cm.value=Math.min(Math.max(t,Number(cm.min)),Number(cm.max));calc();}
+  });
+
+  /* accessibility widget */
+  var aBtn=document.getElementById('a11y-btn'),aMenu=document.getElementById('a11y-menu');
+  aBtn.addEventListener('click',function(){aMenu.classList.toggle('open');});
+  document.getElementById('a11y-text').addEventListener('click',function(){document.body.classList.toggle('big-text');});
+  document.getElementById('a11y-contrast').addEventListener('click',function(){document.body.classList.toggle('high-contrast');});
+})();
+</script>
+</body>
+</html>
