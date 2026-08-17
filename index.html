@@ -139,6 +139,7 @@ h3{font-weight:800;font-size:1.15rem}
 }
 .saved input:focus{border-color:var(--pink);outline:none}
 .saved .save-btn{background:var(--pink);color:var(--ink);border:none;border-radius:100px;padding:9px 20px;font-weight:800;font-size:.9rem}
+.saved .per-month{flex-basis:100%;font-size:.85rem;color:var(--ink-soft);font-weight:500}
 .tip{margin-top:14px;background:var(--pink-soft);border-radius:14px;padding:12px 16px;font-size:.9rem}
 .tip b{font-weight:800}
 
@@ -424,9 +425,10 @@ footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px
           <a class="link-chip gov" href="https://itur.mof.gov.il" target="_blank" rel="noopener">⛰️ הר הכסף · אתר המדינה</a>
         </div>
         <div class="saved">
-          <label for="save-har">מצאת סכום חד פעמי? רשמי כמה זה בחלוקה לחודש</label>
-          <input type="number" id="save-har" min="0" max="10000" inputmode="numeric" placeholder="₪">
+          <label for="save-har">מצאת סכום חד פעמי? רשמי כמה מצאת</label>
+          <input type="number" id="save-har" min="0" max="1000000" inputmode="numeric" placeholder="₪" data-divisor="12">
           <button class="save-btn" data-station="har">מצאתי! 🎉</button>
+          <span class="per-month" id="pm-har" aria-live="polite"></span>
         </div>
       </div>
     </div>
@@ -447,8 +449,8 @@ footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px
         <input type="range" id="c-monthly" min="100" max="2000" step="50" value="700">
       </div>
       <div class="calc-row">
-        <label for="c-years">לכמה שנים תשקיעי אותו? <output id="o-years">25 שנה</output></label>
-        <input type="range" id="c-years" min="5" max="40" step="1" value="25">
+        <label for="c-years">לכמה שנים תשקיעי אותו? <output id="o-years">30 שנה</output></label>
+        <input type="range" id="c-years" min="5" max="40" step="1" value="30">
       </div>
       <div class="calc-row">
         <label for="c-rate">תשואה שנתית ממוצעת <output id="o-rate">8%</output></label>
@@ -456,8 +458,8 @@ footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px
       </div>
       <div class="result" aria-live="polite">
         <div class="lead-line">רק מהכספים האבודים שמצאת, תוכלי לייצר לעתיד שלך:</div>
-        <div class="big" id="r-total">665,718 ₪</div>
-        <div class="split">מתוכם הפקדת מהכיס <b id="r-deposited">210,000 ₪</b> · והריבית עשתה בשבילך <b id="r-profit">455,718 ₪</b></div>
+        <div class="big" id="r-total">1,043,252 ₪</div>
+        <div class="split">מתוכם הפקדת מהכיס <b id="r-deposited">252,000 ₪</b> · והריבית עשתה בשבילך <b id="r-profit">791,252 ₪</b></div>
       </div>
       <p class="disclaimer">* החישוב להמחשה בלבד ומבוסס על תשואה שנתית ממוצעת בהתבסס על נתוני עבר של שוקי ההון. תשואות עבר אינן מבטיחות תשואות עתיד. אין באמור ייעוץ השקעות, המלצה או תחליף לייעוץ המתחשב בנתונים ובצרכים האישיים שלך.</p>
     </div>
@@ -544,8 +546,12 @@ footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px
     btn.addEventListener('click',function(){
       var key=btn.getAttribute('data-station');
       var input=btn.closest('.saved').querySelector('input');
-      var val=Math.max(0,Number(input.value)||0);
+      var raw=Math.max(0,Number(input.value)||0);
+      var divisor=Number(input.getAttribute('data-divisor'))||1;
+      var val=Math.round(raw/divisor);
       state.savings[key]=val;
+      state.raw=state.raw||{};
+      state.raw[key]=raw;
       var st=btn.closest('.station');
       if(val>0){st.classList.add('done');}else{st.classList.remove('done');delete state.savings[key];}
       persist();refreshCounter();
@@ -555,11 +561,21 @@ footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px
   /* restore saved values */
   for(var k in state.savings){
     var input=document.getElementById('save-'+k);
-    if(input){input.value=state.savings[k];
+    if(input){input.value=(state.raw&&state.raw[k])||state.savings[k];
       var st=document.getElementById('st-'+k);
       if(st&&Number(state.savings[k])>0)st.classList.add('done');}
   }
   refreshCounter();
+
+  /* live monthly split for one-time amounts */
+  var harInput=document.getElementById('save-har'),pm=document.getElementById('pm-har');
+  if(harInput&&pm){
+    var showPm=function(){
+      var raw=Number(harInput.value)||0;
+      pm.textContent=raw>0?'חילקתי בשבילך: זה '+fmt(raw/12)+' ₪ בחודש למונה 😉':'';
+    };
+    harInput.addEventListener('input',showPm);showPm();
+  }
 
   /* calculator */
   var cm=document.getElementById('c-monthly'),cy=document.getElementById('c-years'),cr=document.getElementById('c-rate');
