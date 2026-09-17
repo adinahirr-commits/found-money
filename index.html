@@ -487,7 +487,7 @@ src="https://www.facebook.com/tr?id=1820166155346211&ev=ViewContent&noscript=1" 
       <div class="eyebrow">הצעד הבא שלך</div>
       <h2>רוצה לעשות את זה ביחד איתנו?</h2>
       <p>מצאת את הכסף. עכשיו מגיע החלק שבאמת משנה את העתיד: לגרום לו לעבוד בשבילך. זה בדיוק מה שאנחנו עושות באמא משקיעה, צעד צעד, בגובה העיניים.</p>
-      <a class="btn btn-pink" id="cta-btn" href="https://livui.mominvest.co.il/?utm_source=guide1&utm_medium=guide&utm_campaign=found-money">אני רוצה להמשיך איתכן 💛</a>
+      <a class="btn btn-pink" id="cta-livui" href="https://livui.mominvest.co.il/?utm_source=guide1&utm_medium=guide&utm_campaign=found-money">אני רוצה להמשיך איתכן 💛</a>
     </div>
   </div>
 </section>
@@ -622,6 +622,25 @@ src="https://www.facebook.com/tr?id=1820166155346211&ev=ViewContent&noscript=1" 
   aBtn.addEventListener('click',function(){aMenu.classList.toggle('open');});
   document.getElementById('a11y-text').addEventListener('click',function(){document.body.classList.toggle('big-text');});
   document.getElementById('a11y-contrast').addEventListener('click',function(){document.body.classList.toggle('high-contrast');});
+})();
+</script>
+
+<!-- A/B בסוף המדריך (17/09/2026): מחצית מהקוראות לדף המכירה של הליווי, מחצית לדף הסרטון.
+     הווריאנט נשמר ב-localStorage כדי שאותה גולשת תראה תמיד את אותו יעד.
+     המדידה: utm_source=guideN-sales / guideN-video בדף היעד, וביקון לחיצה guideN-cta-sales / -video. -->
+<script>
+(function(){
+  var btn = document.getElementById('cta-livui'); if(!btn) return;
+  var v;
+  try { v = localStorage.getItem('mi_ab_livui'); if(v!=='sales' && v!=='video'){ v = Math.random()<0.5 ? 'sales' : 'video'; localStorage.setItem('mi_ab_livui', v); } } catch(e){ v = 'sales'; }
+  var base = v==='video' ? 'https://livui.mominvest.co.il/video/' : 'https://livui.mominvest.co.il/';
+  btn.href = base + '?utm_source=guide1-' + v + '&utm_medium=guide&utm_campaign=found-money&utm_content=ab-' + v;
+  btn.addEventListener('click', function(){
+    var vid=''; try { vid = localStorage.getItem('mi_vid') || ''; if(!vid){ vid = Date.now().toString(36)+Math.random().toString(36).slice(2,10); localStorage.setItem('mi_vid', vid); } } catch(e){}
+    var body = 'page=guide1-cta-' + v + '&vid=' + encodeURIComponent(vid) + '&utm_source=guide1-' + v + '&utm_content=ab-' + v;
+    try { navigator.sendBeacon('https://academy.mominvest.co.il/guide-hit', new Blob([body], {type:'application/x-www-form-urlencoded'})); } catch(e){}
+    try { if(window.fbq) fbq('trackCustom','GuideCtaClick',{content_name:'guide1', variant:v}); } catch(e){}
+  });
 })();
 </script>
 </body>
