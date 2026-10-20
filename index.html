@@ -480,14 +480,14 @@ src="https://www.facebook.com/tr?id=1820166155346211&ev=ViewContent&noscript=1" 
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA (20/10/2026): מהמדריך להדרכה החיה, לא לדף המכירה. הלינק מדיד ב-/links (webinar-guide1) ומתגלגל למחזור הפעיל -->
 <section class="cta">
   <div class="wrap">
     <div class="card">
       <div class="eyebrow">הצעד הבא שלך</div>
-      <h2>רוצה לעשות את זה ביחד איתנו?</h2>
-      <p>מצאת את הכסף. עכשיו מגיע החלק שבאמת משנה את העתיד: לגרום לו לעבוד בשבילך. זה בדיוק מה שאנחנו עושות באמא משקיעה, צעד צעד, בגובה העיניים.</p>
-      <a class="btn btn-pink" id="cta-livui" href="https://livui.mominvest.co.il/?utm_source=guide1&utm_medium=guide&utm_campaign=found-money">אני רוצה להמשיך איתכן 💛</a>
+      <h2>רוצה לראות איך הכסף הזה הופך לחצי מיליון לכל ילד?</h2>
+      <p>מצאת את הכסף. עכשיו מגיע החלק שבאמת משנה את העתיד: לגרום לו לעבוד בשבילך. בהדרכה החיה הקרובה שלי אני משתפת את השיטה המלאה שלי, בלי פילטרים: איך לבנות לכל ילד גב כלכלי של חצי מיליון ש״ח, מהכסף שכבר נכנס לכם הביתה. שעה בזום. ללא עלות.</p>
+      <a class="btn btn-pink" id="cta-webinar" href="https://academy.mominvest.co.il/r/webinar-guide1">לשריון מקום בהדרכה החיה הקרובה »</a>
     </div>
   </div>
 </section>
@@ -626,24 +626,7 @@ src="https://www.facebook.com/tr?id=1820166155346211&ev=ViewContent&noscript=1" 
 })();
 </script>
 
-<!-- A/B בסוף המדריך (17/09/2026): מחצית מהקוראות לדף המכירה של הליווי, מחצית לדף הסרטון.
-     הווריאנט נשמר ב-localStorage כדי שאותה גולשת תראה תמיד את אותו יעד.
-     המדידה: utm_source=guideN-sales / guideN-video בדף היעד, וביקון לחיצה guideN-cta-sales / -video. -->
-<script>
-(function(){
-  var btn = document.getElementById('cta-livui'); if(!btn) return;
-  var v;
-  try { v = localStorage.getItem('mi_ab_livui'); if(v!=='sales' && v!=='video'){ v = Math.random()<0.5 ? 'sales' : 'video'; localStorage.setItem('mi_ab_livui', v); } } catch(e){ v = 'sales'; }
-  var base = v==='video' ? 'https://livui.mominvest.co.il/video/' : 'https://livui.mominvest.co.il/';
-  btn.href = base + '?utm_source=guide1-' + v + '&utm_medium=guide&utm_campaign=found-money&utm_content=ab-' + v;
-  btn.addEventListener('click', function(){
-    var vid=''; try { vid = localStorage.getItem('mi_vid') || ''; if(!vid){ vid = Date.now().toString(36)+Math.random().toString(36).slice(2,10); localStorage.setItem('mi_vid', vid); } } catch(e){}
-    var body = 'page=guide1-cta-' + v + '&vid=' + encodeURIComponent(vid) + '&utm_source=guide1-' + v + '&utm_content=ab-' + v;
-    try { navigator.sendBeacon('https://academy.mominvest.co.il/guide-hit', new Blob([body], {type:'application/x-www-form-urlencoded'})); } catch(e){}
-    try { if(window.fbq) fbq('trackCustom','GuideCtaClick',{content_name:'guide1', variant:v}); } catch(e){}
-  });
-})();
-</script>
+<!-- 20/10/2026: ה-A/B של livui (sales/video) הוסר. הכפתור מוביל להדרכה החיה דרך /r/webinar-guide1, והקליק נספר שם. -->
 
 <!-- מדידת כניסה (22/09/2026): אותו ביקון כמו בדפי mominvest-guides, page=guide1, כדי לדעת כמה פותחות את המדריך -->
 <script>
