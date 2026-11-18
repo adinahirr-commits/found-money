@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>אוטם הנזילות | אמא משקיעה</title>
-<meta name="description" content="המדריך של עדי סומך: 13 תחנות קצרות, תסריטים מוכנים להעתקה, וכסף שחוזר אלייך כל חודש.">
+<meta name="description" content="המדריך של עדי סומך: 14 תחנות קצרות, תסריטים מוכנים להעתקה, וכסף שחוזר אלייך כל חודש.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23FF5FA2'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,6 +168,12 @@ button{font-family:var(--f);cursor:pointer}
 .fv .s{font-size:14px;color:#57516F}
 
 .disc{font-size:12.5px;line-height:1.7;color:var(--mute);padding:0 6px}
+.taxq{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.taxq button{border:0;border-radius:18px;padding:12px 8px;background:rgba(255,255,255,.25);color:#fff;font-weight:800;font-size:14px;line-height:1.3;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;transition:transform .2s,background .2s}
+.taxq button .e{font-size:26px;line-height:1}
+.taxq button[aria-pressed="true"]{background:#fff;color:#E23D84;transform:translateY(-2px)}
+.taxres{border-radius:18px;padding:12px 14px;text-align:center;font-weight:900;font-size:17px;background:rgba(23,20,46,.18)}
+.taxres.on{background:var(--night);color:#fff}
 .disc a{color:var(--pink2)}
 .draft{background:var(--sun);color:var(--ink);border-radius:16px;padding:10px 14px;font-size:14px;line-height:1.55;font-weight:700}
 #a11y{position:fixed;bottom:14px;left:14px;z-index:60;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:22px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
@@ -229,6 +235,7 @@ button{font-family:var(--f);cursor:pointer}
   <div class="scan" role="group" aria-label="מה יש לי">
     <button type="button" data-k="subs" aria-pressed="true"><span class="e">📲</span>אפליקציות ומנויים בטלפון</button>
     <button type="button" data-k="card" aria-pressed="true"><span class="e">💳</span>כרטיס אשראי, או כמה</button>
+    <button type="button" data-k="tax" aria-pressed="true"><span class="e">💸</span>עבדתי כשכירה ב-6 השנים האחרונות</button>
     <button type="button" data-k="bank" aria-pressed="true"><span class="e">🏦</span>חשבון בנק</button>
     <button type="button" data-k="cell" aria-pressed="true"><span class="e">📱</span>קו סלולרי</button>
     <button type="button" data-k="net" aria-pressed="false"><span class="e">🌐</span>אינטרנט או טלוויזיה</button>
@@ -252,7 +259,7 @@ button{font-family:var(--f);cursor:pointer}
 <!-- 4 · מפה -->
 <section class="scr creambg" id="map">
   <span class="tag">המפה שלך</span>
-  <h2 class="mid">13 תחנות,<br>מהקל אל המשמעותי</h2>
+  <h2 class="mid">14 תחנות,<br>מהקל אל המשמעותי</h2>
   <p class="lead">תתחילי מלמעלה. כל תחנה היא הודעה אחת, שיחה אחת, או לחיצה אחת.</p>
   <div class="trip" id="trip"></div>
 </section>
@@ -298,8 +305,28 @@ button{font-family:var(--f);cursor:pointer}
   <div class="saved"><label for="save-card">כמה הורדת בחודש?</label><span class="inp"><input id="save-card" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
 </section>
 
+<section class="scr pinkbg st" id="st-tax" data-k="tax">
+  <span class="tag">תחנה 3 · 2 דקות בדיקה</span>
+  <div class="sthead"><span class="ico">💸</span><div><h2 class="mid">החזר<br>מס</h2><span class="worth">אפשר לבקש עד 6 שנים אחורה</span></div></div>
+  <p class="lead">הרבה שכירות משלמות יותר מס ממה שצריך, ולא יודעות. את ההחזר אפשר לבקש עד שש שנים אחורה.</p>
+  <p style="font-weight:800">סמני מה קרה לך בשש השנים האחרונות:</p>
+  <div class="taxq" role="group" aria-label="בדיקה מהירה להחזר מס">
+    <button type="button" aria-pressed="false"><span class="e">🤱</span>דמי לידה או שמירת הריון</button>
+    <button type="button" aria-pressed="false"><span class="e">💼</span>שני מעסיקים באותה שנה</button>
+    <button type="button" aria-pressed="false"><span class="e">🪖</span>מילואים או דמי אבטלה</button>
+    <button type="button" aria-pressed="false"><span class="e">🎓</span>סיימתי תואר או לימודי מקצוע</button>
+    <button type="button" aria-pressed="false"><span class="e">🧡</span>תרמתי, ויש לי קבלות</button>
+    <button type="button" aria-pressed="false"><span class="e">🛡️</span>שילמתי בעצמי ביטוח חיים או פנסיה</button>
+  </div>
+  <div class="taxres" id="taxres" aria-live="polite">כל סימון כאן הוא סיבה טובה לבדוק</div>
+  <a class="cta" id="taxcta" href="https://www.finupp.meitavdash.co.il/p/adi" target="_blank" rel="noopener" style="width:100%;text-align:center">לבדיקת החזר המס שלי »</a>
+  <p class="small" style="opacity:.95">הבדיקה נפתחת באתר Finupp מבית מיטב. ניתן ורצוי לשתף גם את בן/בת הזוג 💞</p>
+  <div class="tip"><b>גם אם לא סימנת כלום</b> שווה לבדוק. יש עוד סיבות להחזר, כמו מגורים ביישוב עם הטבת מס או ילד עם צרכים מיוחדים. הבדיקה נעשית באתר חיצוני ולא על ידי אמא משקיעה, וזה לא ייעוץ מס.</div>
+  <div class="saved"><label for="save-tax">קיבלת החזר? רשמי כמה (נחלק ל-12 בשבילך)</label><span class="inp"><input id="save-tax" type="number" inputmode="numeric" min="0" placeholder="0" data-divisor="12">₪</span><button class="go" type="button">מצאתי! 🎉</button><span class="pm" id="pm-tax"></span></div>
+</section>
+
 <section class="scr dark st" id="st-bank" data-k="bank">
-  <span class="tag">תחנה 3 · הודעה אחת בצ׳אט</span>
+  <span class="tag">תחנה 4 · הודעה אחת בצ׳אט</span>
   <div class="sthead"><span class="ico">🏦</span><div><h2 class="mid">עמלות<br>הבנק</h2><span class="worth">20 עד 40 ₪ בחודש</span></div></div>
   <p class="lead">יש לך זכות לעבור ל"מסלול בסיסי": מחיר קבוע ונמוך במקום עמלה על כל פעולה. רוב הנשים פשוט לא יודעות שזה קיים.</p>
   <div class="script"><span class="lb">התסריט שלך · שלחי בצ׳אט של האפליקציה</span><p id="sc-bank">שלום, אני מבקשת לעבור למסלול העמלות הבסיסי בחשבון שלי, בהתאם להוראות בנק ישראל.
@@ -312,7 +339,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr pinkbg st" id="st-cell" data-k="cell">
-  <span class="tag">תחנה 4 · שיחה של 5 דקות</span>
+  <span class="tag">תחנה 5 · שיחה של 5 דקות</span>
   <div class="sthead"><span class="ico">📱</span><div><h2 class="mid">הסלולר<br>שלך</h2><span class="worth">30 עד 60 ₪ בחודש</span></div></div>
   <p class="lead">רוב המסלולים היום עולים 20 עד 40 ₪. משלמת יותר? את משלמת על ותק. שיחה אחת לשימור מסדרת את זה.</p>
   <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-cell">היי, אני לקוחה שלכם כבר תקופה ואני משלמת היום [הסכום שלך] ₪ בחודש.
@@ -328,7 +355,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr dark st" id="st-net" data-k="net">
-  <span class="tag">תחנה 5 · שיחה של 10 דקות</span>
+  <span class="tag">תחנה 6 · שיחה של 10 דקות</span>
   <div class="sthead"><span class="ico">🌐</span><div><h2 class="mid">אינטרנט<br>וטלוויזיה</h2><span class="worth">40 עד 80 ₪ בחודש</span></div></div>
   <p class="lead">כאן אני הורדתי 70 ₪ בחודש בשיחה אחת. המבצעים הטובים שמורים למי שמתקשרת ומבקשת.</p>
   <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-net">שלום, אני לקוחה שלכם ומשלמת היום [הסכום שלך] ₪ בחודש על החבילה.
@@ -344,7 +371,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr mintbg st" id="st-fixed" data-k="fixed">
-  <span class="tag">תחנה 6 · רגע של כנות</span>
+  <span class="tag">תחנה 7 · רגע של כנות</span>
   <div class="sthead"><span class="ico">🏋️</span><div><h2 class="mid">חדר כושר,<br>חניה וחוגים</h2><span class="worth">50 עד 250 ₪ בחודש</span></div></div>
   <p class="lead">חניה חודשית שאת צריכה כמה ימים בחודש. חדר כושר שלא נכנסת אליו מאז מרץ. חוג שהילד כבר לא רוצה.</p>
   <ol class="steps">
@@ -357,7 +384,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr dark st" id="st-power" data-k="power">
-  <span class="tag">תחנה 7 · 10 דקות</span>
+  <span class="tag">תחנה 8 · 10 דקות</span>
   <div class="sthead"><span class="ico">⚡</span><div><h2 class="mid">החשמל<br>של הבית</h2><span class="worth">15 עד 40 ₪ בחודש</span></div></div>
   <p class="lead">היום אפשר לקנות חשמל גם מספק פרטי, בהנחה על התעריף. החשמל, הקווים והתקלות נשארים אצל חברת החשמל. רק החשבון משתנה.</p>
   <ol class="steps">
@@ -370,7 +397,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr creambg st" id="st-carins" data-k="carins">
-  <span class="tag">תחנה 8 · פעם בשנה</span>
+  <span class="tag">תחנה 9 · פעם בשנה</span>
   <div class="sthead"><span class="ico">🚗</span><div><h2 class="mid">ביטוח רכב<br>ודירה</h2><span class="worth">מאות ₪ בשנה</span></div></div>
   <p class="lead">הביטוחים האלה מתחדשים לבד כל שנה, ולא פעם במחיר גבוה יותר. מי ששואלת לפני החידוש, משלמת פחות.</p>
   <ol class="steps">
@@ -385,7 +412,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr dark st" id="st-ins" data-k="ins">
-  <span class="tag">תחנה 9 · 10 דקות באתר המדינה</span>
+  <span class="tag">תחנה 10 · 10 דקות באתר המדינה</span>
   <div class="sthead"><span class="ico">🛡️</span><div><h2 class="mid">ביטוחים<br>כפולים</h2><span class="worth">מאות ₪ בשנה</span></div></div>
   <p class="lead">"הר הביטוח" של משרד האוצר מראה בחינם את כל הביטוחים על שמך. הרבה נשים מגלות שם כפל: שני ביטוחים שמכסים את אותו דבר.</p>
   <ol class="steps">
@@ -403,7 +430,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr pinkbg st" id="st-loans" data-k="loans">
-  <span class="tag">תחנה 10 · שיחה אחת לבנק</span>
+  <span class="tag">תחנה 11 · שיחה אחת לבנק</span>
   <div class="sthead"><span class="ico">📉</span><div><h2 class="mid">הלוואות<br>ומינוס</h2><span class="worth">לפעמים הנזילה הכי גדולה</span></div></div>
   <p class="lead">ריבית על הלוואה או על מינוס יכולה להיות גבוהה מאוד. שווה לבדוק כמה את משלמת, ולבקש הוזלה.</p>
   <div class="script"><span class="lb">התסריט שלך · לשיחה או לצ׳אט</span><p id="sc-loans">שלום, יש לי הלוואה אצלכם ואני רוצה לבדוק אותה.
@@ -414,7 +441,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr dark st" id="st-pension" data-k="pension">
-  <span class="tag">תחנה 11 · שיחה אחת</span>
+  <span class="tag">תחנה 12 · שיחה אחת</span>
   <div class="sthead"><span class="ico">🧾</span><div><h2 class="mid">דמי הניהול<br>בפנסיה</h2><span class="worth">נראה קטן, מצטבר לאורך שנים</span></div></div>
   <p class="lead">קרן פנסיה וקרן השתלמות גובות דמי ניהול כל חודש, מכסף שלך. בבקשה אחת אפשר לבקש להוריד אותם.</p>
   <ol class="steps">
@@ -430,7 +457,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr creambg st" id="st-idle" data-k="idle">
-  <span class="tag">תחנה 12 · הנזילה השקטה</span>
+  <span class="tag">תחנה 13 · הנזילה השקטה</span>
   <div class="sthead"><span class="ico">🛋️</span><div><h2 class="mid">הכסף שיושב<br>בעו״ש</h2><span class="worth">כסף שלא עובד בשבילך</span></div></div>
   <p class="lead">כסף שיושב בעו״ש לרוב לא מרוויח כלום, והמחירים בחוץ ממשיכים לעלות. זו נזילה שלא רואים בפירוט החיובים.</p>
   <ol class="steps">
@@ -443,7 +470,7 @@ button{font-family:var(--f);cursor:pointer}
 </section>
 
 <section class="scr mintbg st" id="st-har" data-k="har">
-  <span class="tag">🎁 בונוס · תחנה 13 · 5 דקות</span>
+  <span class="tag">🎁 בונוס · תחנה 14 · 5 דקות</span>
   <div class="sthead"><span class="ico">💰</span><div><h2 class="mid">כסף שכבר<br>שלך</h2><span class="worth">יש שמצאו עשרות אלפי ₪</span></div></div>
   <p class="lead">"הר הכסף" של משרד האוצר מאתר בחינם חשבונות רדומים, קופות גמל ישנות וכספי ביטוח על שמך. כסף אבוד, פשוטו כמשמעו.</p>
   <ol class="steps">
@@ -511,7 +538,7 @@ button{font-family:var(--f);cursor:pointer}
   <a class="cta wa" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener">להצטרפות לקבוצת הווטסאפ</a>
 </section>
 
-<p class="disc">המדריך נכתב באהבה על ידי עדי סומך · אמא משקיעה. המידע כללי בלבד ואינו ייעוץ פיננסי, ביטוחי, פנסיוני או ייעוץ השקעות, ואינו מותאם למצב האישי שלך. הטווחים במדריך הם הערכה להמחשה ולא הבטחה. מספרי הטלפון והקישורים נכונים למועד הפרסום. הסכומים שאת רושמת נשמרים רק בדפדפן שלך.<br>
+<p class="disc">המדריך נכתב באהבה על ידי עדי סומך · אמא משקיעה. המידע כללי בלבד ואינו ייעוץ פיננסי, ביטוחי, פנסיוני או ייעוץ השקעות, ואינו מותאם למצב האישי שלך. הטווחים במדריך הם הערכה להמחשה ולא הבטחה. מספרי הטלפון והקישורים נכונים למועד הפרסום. הסכומים שאת רושמת נשמרים רק בדפדפן שלך. בדיקת החזר המס נעשית באתר Finupp מבית מיטב ולא על ידי אמא משקיעה, ואינה ייעוץ מס.<br>
 נתקלת בקושי נגישות? כתבי לנו: <a href="mailto:mominvest10x@gmail.com">mominvest10x@gmail.com</a><br>
 העמוד משתמש בפיקסל של מטא למדידת ביצועי הפרסום.<br>
 עוד מאמרים של עדי: <a href="https://mominvest.co.il/blog/kesef-avud/">איך למצוא כסף אבוד</a> · <a href="https://mominvest.co.il/blog/marvichim-yafe-lo-nishar/">תקציב משפחתי בלי אקסל</a> · <a href="https://mominvest.co.il/blog/keren-kaspit/">מה זה קרן כספית</a> · <a href="https://mominvest.co.il/">אמא משקיעה</a></p>
@@ -522,7 +549,7 @@ button{font-family:var(--f);cursor:pointer}
 (function(){
   var KEY='foundMoneyGuide.v1', SCAN='leaksScan.v1';
   var ST=[ // key, emoji, short name, monthly range [lo,hi] (null = לא נספר בטווח)
-    ['subs','👻','מנויים',[50,300]],['card','💳','אשראי',[15,60]],['bank','🏦','בנק',[20,40]],
+    ['subs','👻','מנויים',[50,300]],['card','💳','אשראי',[15,60]],['tax','💸','החזר מס',null],['bank','🏦','בנק',[20,40]],
     ['cell','📱','סלולר',[30,60]],['net','🌐','אינטרנט',[40,80]],['fixed','🏋️','כושר וחניה',[50,250]],
     ['power','⚡','חשמל',[15,40]],['carins','🚗','ביטוח רכב',[20,60]],['ins','🛡️','ביטוחים כפולים',[30,150]],
     ['loans','📉','הלוואות',[30,150]],['pension','🧾','פנסיה',null],['idle','🛋️','העו״ש',null],['har','💰','הר הכסף',null]
@@ -613,6 +640,13 @@ button{font-family:var(--f);cursor:pointer}
   }
   cm.addEventListener('input',calc);cy.addEventListener('input',calc);calc();
   uf.addEventListener('click',function(){var t=total();if(t>0){cm.value=Math.min(Math.max(t,100),3000);calc();}});
+
+  /* החזר מס: בדיקה מהירה */
+  var tq=[].slice.call(document.querySelectorAll('.taxq button')), tr=document.getElementById('taxres');
+  function taxUpd(){var n=tq.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    tr.textContent=n?('סימנת '+n+'. נראה שכדאי לבדוק החזר מס 💛'):'כל סימון כאן הוא סיבה טובה לבדוק';tr.classList.toggle('on',n>0);}
+  tq.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');taxUpd();});});
+  document.getElementById('taxcta').addEventListener('click',function(){try{if(window.fbq)fbq('trackCustom','TaxCheckClick',{content_name:'guide1_tax'});}catch(e){}});
 
   /* נגישות */
   document.getElementById('a11y').addEventListener('click',function(){document.body.classList.toggle('bigtext');});
