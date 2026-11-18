@@ -1,200 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>המדריך לכספים האבודים | אמא משקיעה</title>
-<meta name="description" content="מדריך של עמוד אחד עם תסריטים מוכנים להעתקה: לשלם פחות על סלולר, אינטרנט, בנק, אשראי וביטוחים, ולהפוך את הכסף שמצאת להשקעה לעתיד שלך.">
-<meta property="og:title" content="המדריך לכספים האבודים | אמא משקיעה">
-<meta property="og:description" content="בין 300 ל 700 ש״ח בחודש מחכים לך בתוך החשבונות הקיימים שלך. תסריטים מוכנים, לינקים ישירים, ומחשבון שמראה כמה זה שווה בעתיד.">
-<meta property="og:type" content="website">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>אוטם הנזילות | אמא משקיעה</title>
+<meta name="description" content="המדריך של עדי סומך: 13 תחנות קצרות, תסריטים מוכנים להעתקה, וכסף שחוזר אלייך כל חודש.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23FF5FA2'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --canvas:#FBFAF7; --ink:#191A2E; --ink-soft:#6B6B7B;
-  --pink:#EF55A5; --lime:#CCD537; --vista:#8C9EFF; --sky:#BEE0F2;
-  --pink-soft:#FCE1EF; --line:#ECE7DF;
-  --radius-card:22px; --shadow:0 18px 40px -28px rgba(25,26,46,.18);
-  --fs:1rem;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Heebo',sans-serif; background:var(--canvas); color:var(--ink);
-  font-size:var(--fs); line-height:1.7; -webkit-font-smoothing:antialiased;
-}
-body.big-text{--fs:1.15rem}
-body.high-contrast{--ink-soft:#3a3a4a; --line:#c9c2b6}
-a{color:inherit}
-button{font-family:inherit;cursor:pointer}
-.wrap{max-width:680px;margin:0 auto;padding:0 20px}
-.eyebrow{font-size:.78rem;letter-spacing:.16em;font-weight:700;color:var(--pink);text-transform:uppercase}
-h1{font-weight:900;font-size:clamp(2rem,7vw,3.2rem);line-height:1.15;letter-spacing:-.02em}
-h2{font-weight:800;font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.25;letter-spacing:-.02em}
-h3{font-weight:800;font-size:1.15rem}
-.muted{color:var(--ink-soft)}
-
-/* ---- sticky counter ---- */
-#sticky{
-  position:fixed;top:0;right:0;left:0;z-index:50;
-  background:var(--ink);color:#fff;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:10px 16px;font-weight:700;font-size:.95rem;
-  transform:translateY(-110%);transition:transform .35s ease;
-}
-#sticky.show{transform:translateY(0)}
-#sticky .amount{color:var(--lime);font-weight:900;font-size:1.1rem}
-#sticky a{color:var(--sky);font-weight:500;font-size:.82rem;text-decoration:underline;margin-inline-start:6px}
-
-/* ---- hero ---- */
-.hero{padding:56px 0 40px;text-align:center;position:relative;overflow:hidden}
-.hero .blob{position:absolute;border-radius:50%;z-index:0;opacity:.5;pointer-events:none}
-.hero .b1{width:220px;height:220px;background:var(--pink-soft);top:-70px;right:-70px}
-.hero .b2{width:170px;height:170px;background:var(--sky);bottom:-50px;left:-50px}
-.hero .wrap{position:relative;z-index:1}
-.hero h1{margin:14px 0 16px}
-.hero h1 .hl{background:linear-gradient(transparent 62%,var(--lime) 62%)}
-.hero p{max-width:34em;margin:0 auto}
-.hero .intro{margin-top:18px;font-size:1.05rem}
-
-/* ---- buttons ---- */
-.btn{
-  display:inline-block;border:none;border-radius:100px;font-weight:800;
-  padding:15px 34px;font-size:1.05rem;text-decoration:none;transition:all .18s ease;
-}
-.btn-pink{background:var(--pink);color:var(--ink)}
-.btn-pink:hover{filter:brightness(.95);transform:translateY(-1px)}
-.btn-dark{background:var(--ink);color:#fff}
-.btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);font-weight:700;padding:10px 22px;font-size:.95rem}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:800}
-.btn-wa svg{width:22px;height:22px;fill:currentColor;flex:none}
-.btn-wa:hover{filter:brightness(.95);transform:translateY(-1px)}
-.cta .or{margin:22px auto 12px;font-size:1rem}
-:focus-visible{outline:3px solid var(--vista);outline-offset:2px;border-radius:6px}
-
-/* ---- steps intro ---- */
-.how{padding:36px 0}
-.how .steps{display:grid;gap:12px;margin-top:20px}
-.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
-.step .num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--pink-soft);color:var(--ink);font-weight:900;display:flex;align-items:center;justify-content:center}
-
-/* ---- stations ---- */
-.stations{padding:28px 0 20px}
-.station{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);
-  margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden;
-}
-.station.done{border-color:var(--lime);border-width:2px}
-.st-head{
-  width:100%;background:none;border:none;text-align:right;
-  display:flex;align-items:center;gap:12px;padding:18px 20px;
-}
-.st-head .emoji{font-size:1.6rem;flex-shrink:0}
-.st-head .titles{flex:1;min-width:0}
-.st-head .t{font-weight:800;font-size:1.08rem;line-height:1.3}
-.st-head .s{font-size:.85rem;color:var(--ink-soft);line-height:1.4}
-.st-head .chev{flex-shrink:0;transition:transform .25s;color:var(--ink-soft)}
-.station[data-open="1"] .chev{transform:rotate(180deg)}
-.st-head .badge{
-  flex-shrink:0;background:var(--lime);color:var(--ink);font-weight:800;font-size:.78rem;
-  border-radius:100px;padding:3px 10px;display:none;
-}
-.station.done .badge{display:inline-block}
-.st-body{display:none;padding:0 20px 22px;border-top:1px solid var(--line)}
-.station[data-open="1"] .st-body{display:block}
-.st-body .why{padding:16px 0 4px;font-size:.98rem}
-.st-body ul{margin:10px 0 0 0;padding-inline-start:20px}
-.st-body li{margin-bottom:6px}
-
-/* script box */
-.script{
-  background:var(--canvas);border:1.5px dashed var(--vista);border-radius:16px;
-  padding:16px;margin-top:16px;position:relative;
-}
-.script .label{font-size:.75rem;letter-spacing:.12em;font-weight:700;color:var(--vista);text-transform:uppercase;margin-bottom:6px}
-.script p{font-size:.95rem;white-space:pre-line}
-.copy-btn{
-  margin-top:12px;background:var(--ink);color:#fff;border:none;border-radius:100px;
-  padding:9px 20px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;
-}
-.copy-btn.copied{background:var(--lime);color:var(--ink)}
-
-/* link rows */
-.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.link-chip{
-  display:inline-flex;align-items:center;gap:6px;text-decoration:none;
-  background:var(--sky);color:var(--ink);font-weight:700;font-size:.88rem;
-  border-radius:100px;padding:8px 16px;transition:filter .15s;
-}
-.link-chip:hover{filter:brightness(.95)}
-.link-chip.gov{background:var(--pink-soft)}
-
-/* saved input */
-.saved{
-  margin-top:18px;background:var(--canvas);border-radius:16px;padding:14px 16px;
-  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-}
-.saved label{font-weight:700;font-size:.92rem}
-.saved input{
-  width:90px;border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;
-  font-family:inherit;font-size:1rem;font-weight:700;text-align:center;background:#fff;color:var(--ink);
-}
-.saved input:focus{border-color:var(--pink);outline:none}
-.saved .save-btn{background:var(--pink);color:var(--ink);border:none;border-radius:100px;padding:9px 20px;font-weight:800;font-size:.9rem}
-.saved .per-month{flex-basis:100%;font-size:.85rem;color:var(--ink-soft);font-weight:500}
-.tip{margin-top:14px;background:var(--pink-soft);border-radius:14px;padding:12px 16px;font-size:.9rem}
-.tip b{font-weight:800}
-
-/* ---- calculator ---- */
-.calc-section{background:var(--vista);padding:clamp(48px,8vw,80px) 0;margin-top:36px}
-.calc-section h2,.calc-section p{color:var(--ink)}
-.calc-card{background:#fff;border-radius:var(--radius-card);padding:26px 22px;margin-top:24px;box-shadow:var(--shadow)}
-.calc-row{margin-bottom:22px}
-.calc-row label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:.95rem;margin-bottom:8px}
-.calc-row label output{font-weight:900;font-size:1.15rem;color:var(--pink)}
-input[type=range]{width:100%;accent-color:var(--pink);height:32px}
-.use-found{
-  display:none;margin:0 0 18px;background:var(--pink-soft);border:none;border-radius:100px;
-  padding:10px 20px;font-weight:700;font-size:.9rem;color:var(--ink);
-}
-.use-found.show{display:inline-block}
-.result{
-  text-align:center;background:var(--ink);border-radius:18px;padding:26px 20px;margin-top:8px;color:#fff;
-}
-.result .lead-line{font-size:1rem;font-weight:500;opacity:.9}
-.result .big{font-size:clamp(2.2rem,9vw,3.4rem);font-weight:900;color:var(--lime);letter-spacing:-.02em;line-height:1.2;margin:6px 0}
-.result .split{font-size:.88rem;opacity:.85;margin-top:8px}
-.disclaimer{font-size:.78rem;color:var(--ink);opacity:.75;margin-top:16px;line-height:1.6}
-
-/* ---- CTA ---- */
-.cta{padding:clamp(48px,8vw,80px) 0;text-align:center}
-.cta .card{background:var(--pink-soft);border-radius:var(--radius-card);padding:36px 24px}
-.cta h2{margin-bottom:12px}
-.cta p{max-width:30em;margin:0 auto 22px}
-
-/* ---- footer ---- */
-footer{border-top:1px solid var(--line);padding:28px 0 90px;text-align:center}
-footer p{font-size:.78rem;color:var(--ink-soft);max-width:38em;margin:0 auto 8px}
-
-/* accessibility widget */
-#a11y-btn{
-  position:fixed;bottom:18px;left:18px;z-index:60;width:46px;height:46px;border-radius:50%;
-  background:var(--ink);color:#fff;border:none;font-size:1.2rem;box-shadow:var(--shadow);
-}
-#a11y-menu{
-  position:fixed;bottom:72px;left:18px;z-index:60;background:#fff;border:1px solid var(--line);
-  border-radius:16px;padding:12px;display:none;flex-direction:column;gap:8px;box-shadow:var(--shadow);
-}
-#a11y-menu.open{display:flex}
-#a11y-menu button{background:var(--canvas);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:.85rem;font-weight:700;color:var(--ink)}
-
-@media (min-width:640px){
-  .saved input{width:110px}
-}
-</style>
-<!-- Meta Pixel -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;800;900&display=swap">
+<!--TRACKING-START-->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -203,438 +18,607 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1820166155346211');fbq('track','PageView');fbq('track','ViewContent',{content_name:'guide1_content',content_category:'lead_magnet'});
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1820166155346211&ev=ViewContent&noscript=1" alt=""></noscript>
-<!-- End Meta Pixel -->
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1820166155346211&ev=PageView&noscript=1"></noscript>
+<!--TRACKING-END-->
+<style>
+/* "סטוריז לילה ורוד" · מסך אחד לכל רעיון · מראה אחד קבוע */
+:root{
+  --night:#17142E; --night2:#241E48; --pink:#FF5FA2; --pink2:#FFB3D4; --cream:#FFF6EE;
+  --mint:#3DDBB0; --sun:#FFC24B; --sky:#8AA6FF; --ink:#17142E; --mute:#B9B3D6;
+  --f:'Noto Sans Hebrew','Arial Hebrew',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--night);color:#fff;font-family:var(--f);font-size:18px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+body.bigtext{font-size:20.5px}
+.app{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px;padding-top:16px}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.15;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button{font-family:var(--f);cursor:pointer}
+.scr{border-radius:32px;padding:30px 22px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;justify-content:center;scroll-margin-top:64px}
+.dark{background:linear-gradient(160deg,var(--night2),#14112A)}
+.pinkbg{background:linear-gradient(160deg,#FF6FAB,#FF4F8F);color:#fff}
+.creambg{background:var(--cream);color:var(--ink)}
+.mintbg{background:linear-gradient(160deg,#4BE3BA,#2CC79B);color:var(--ink)}
+.tag{display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:14px;border-radius:999px;padding:6px 14px;width:fit-content}
+.dark .tag{background:rgba(255,95,162,.18);color:var(--pink2)}
+.pinkbg .tag{background:rgba(255,255,255,.22);color:#fff}
+.creambg .tag{background:#FFE0EC;color:#C2316F}
+.mintbg .tag{background:rgba(23,20,46,.12);color:var(--ink)}
+.big{font-size:46px}
+.mid{font-size:31px}
+.lead{font-size:19px;opacity:.94}
+.ill{display:block;width:100%;height:auto;max-height:300px}
+.center{text-align:center;align-items:center}
+.small{font-size:14px;opacity:.82;line-height:1.55}
+.from{font-weight:800;color:var(--pink2)}
+
+/* מונה קבוע */
+#sticky{position:fixed;top:10px;left:50%;transform:translate(-50%,-140%);z-index:50;background:#fff;color:var(--ink);
+  border-radius:999px;padding:8px 18px;font-weight:800;font-size:15px;display:flex;gap:8px;align-items:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);transition:transform .35s ease;white-space:nowrap}
+#sticky.show{transform:translate(-50%,0)}
+#sticky b{color:#E23D84;font-size:18px;font-variant-numeric:tabular-nums}
+#sticky a{font-size:13px;color:#6B6585}
+
+/* שער */
+.cover{min-height:620px;background:radial-gradient(circle at 30% 15%,#5B2B7E 0%,transparent 55%),radial-gradient(circle at 85% 85%,#7A1F57 0%,transparent 50%),var(--night2)}
+.cover .big em{font-style:normal;color:var(--pink)}
+.drop{animation:fall 2.4s ease-in infinite}
+@keyframes fall{0%{transform:translateY(0);opacity:0}15%{opacity:1}70%{opacity:1}100%{transform:translateY(70px);opacity:0}}
+.coinpop{animation:pop .5s ease-out both}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.cta{display:inline-block;text-decoration:none;background:#fff;color:#E23D84;font-weight:900;border-radius:18px;padding:15px 24px;font-size:18px;width:fit-content;border:0}
+.cta.pk{background:var(--pink);color:#fff}
+.cta.dk{background:var(--night);color:#fff;width:100%;text-align:center}
+.cta.wa{background:#25D366;color:#fff;width:100%;text-align:center}
+.cta:focus-visible,.stop:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+/* איך זה עובד */
+.prog{display:flex;flex-direction:column;gap:12px}
+.pstep{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;background:rgba(23,20,46,.08);border-radius:20px;padding:12px 14px;font-weight:800;font-size:17px;line-height:1.35}
+.pstep .c{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:26px}
+.pstep small{display:block;font-weight:600;font-size:14px;opacity:.75}
+
+/* הבדיקה של 60 שניות */
+.scan{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.scan button{border:0;border-radius:20px;padding:14px 10px;background:rgba(255,255,255,.08);color:#fff;font-weight:800;font-size:15px;line-height:1.3;
+  display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;transition:transform .2s,background .2s}
+.scan button .e{font-size:32px;line-height:1}
+.scan button[aria-pressed="true"]{background:var(--pink);transform:translateY(-3px)}
+.scan button[aria-pressed="true"]::after{content:"✓";position:absolute}
+.scan button{position:relative}
+.scan button[aria-pressed="true"]::after{top:8px;left:12px;font-size:15px}
+.result{background:#fff;color:var(--ink);border-radius:24px;padding:18px;display:flex;flex-direction:column;gap:10px;text-align:center}
+.result .range{font-size:34px;font-weight:900;color:#E23D84;font-variant-numeric:tabular-nums;line-height:1.15}
+.result .cnt{font-weight:800}
+.demo{display:inline-block;font-size:12.5px;font-weight:800;background:var(--sun);color:var(--ink);border-radius:999px;padding:3px 12px;width:fit-content;margin:0 auto}
+.mylist{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.mylist a{text-decoration:none;background:#FFE0EC;color:#C2316F;font-weight:800;font-size:14px;border-radius:999px;padding:6px 12px}
+
+/* מפת התחנות */
+.trip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stop{border-radius:22px;padding:14px 8px;text-align:center;text-decoration:none;color:var(--ink);background:#fff;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:800;font-size:14px;line-height:1.25;position:relative;transition:opacity .3s}
+.stop .n{font-size:30px;line-height:1.1}
+.stop small{font-weight:600;color:#6B6585;font-size:12px}
+.stop.skip{opacity:.38}
+.stop.ok::after{content:"✓";position:absolute;top:6px;left:8px;width:22px;height:22px;border-radius:50%;background:var(--mint);color:var(--ink);font-size:13px;display:grid;place-items:center}
+
+/* תחנה */
+.sthead{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center}
+.ico{width:92px;height:92px;border-radius:28px;display:grid;place-items:center;font-size:50px;background:rgba(255,255,255,.1)}
+.creambg .ico{background:#fff}
+.mintbg .ico,.pinkbg .ico{background:rgba(255,255,255,.35)}
+.worth{display:inline-block;margin-top:8px;font-size:14px;font-weight:800;border-radius:999px;padding:3px 12px;background:var(--mint);color:var(--ink)}
+.mintbg .worth{background:var(--night);color:#fff}
+.st.skipme .sthead::after{content:"סימנת שזה לא אצלך · אפשר לדלג";grid-column:1/-1;font-size:13px;font-weight:700;opacity:.7}
+.steps{display:grid;gap:8px;padding:0;margin:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;font-size:16.5px;line-height:1.5}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--pink);color:#fff;font-weight:900;font-size:14px;display:grid;place-items:center;margin-top:1px}
+.script{background:#fff;color:var(--ink);border:2px dashed var(--pink);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.script .lb{font-size:13px;font-weight:800;color:#C2316F}
+.script p{font-size:16px;line-height:1.6;white-space:pre-line}
+.copy{align-self:flex-start;border:0;background:var(--night);color:#fff;border-radius:999px;padding:10px 20px;font-weight:800;font-size:15px}
+.copy.done{background:var(--mint);color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:#fff;color:var(--ink);font-weight:800;font-size:14.5px;border-radius:999px;padding:9px 15px}
+.creambg .chip{background:var(--night);color:#fff}
+.tip{border-radius:18px;padding:12px 14px;font-size:15.5px;line-height:1.55;background:rgba(255,255,255,.08)}
+.creambg .tip{background:#FFE9F2}
+.mintbg .tip,.pinkbg .tip{background:rgba(255,255,255,.3)}
+.tip b{font-weight:900}
+.saved{display:flex;flex-wrap:wrap;align-items:center;gap:10px;border-radius:20px;padding:14px;background:rgba(255,255,255,.12)}
+.creambg .saved{background:#fff}
+.mintbg .saved,.pinkbg .saved{background:rgba(255,255,255,.4)}
+.saved label{font-weight:800;font-size:15.5px;flex:1 1 100%}
+.saved .inp{display:flex;align-items:center;gap:6px;background:#fff;color:var(--ink);border-radius:14px;padding:4px 12px;font-weight:800}
+.saved input{width:96px;border:0;font:inherit;font-size:20px;font-weight:900;color:var(--ink);background:transparent;padding:6px 0;text-align:center}
+.saved .go{border:0;background:var(--pink);color:#fff;border-radius:14px;padding:12px 18px;font-weight:900;font-size:16px}
+.saved .pm{flex:1 1 100%;font-size:13.5px;font-weight:700;opacity:.85;min-height:0}
+.st.ok .saved{outline:3px solid var(--mint)}
+.st.ok .saved .go{background:var(--mint);color:var(--ink)}
+
+/* טלפון: המנויים */
+.phone{width:230px;margin:0 auto;border-radius:36px;background:#0E0C1F;padding:11px;box-shadow:0 30px 60px rgba(0,0,0,.35),inset 0 0 0 2px #2E2858}
+.scrn{background:#fff;border-radius:27px;padding:14px 12px;color:var(--ink);display:flex;flex-direction:column;gap:8px;font-size:13px}
+.notch{width:70px;height:6px;border-radius:6px;background:#E7E3F3;margin:0 auto 2px}
+.sub{display:grid;grid-template-columns:30px 1fr auto;gap:8px;align-items:center;border:2px solid #ECE8F6;border-radius:14px;padding:8px 10px;font-weight:700;position:relative}
+.sub i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-size:16px}
+.sub small{display:block;font-weight:600;color:#8A84A3;font-size:11px}
+.sub.hl{border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,95,162,.18)}
+.sub .x{font-size:11px;font-weight:900;color:#fff;background:var(--pink);border-radius:999px;padding:3px 8px}
+
+/* סיכום ומחשבון */
+.total{font-size:54px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.bars{display:flex;align-items:flex-end;gap:10px;height:170px;justify-content:center;padding-top:10px}
+.bar{width:64px;border-radius:16px 16px 6px 6px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;font-weight:900;font-size:13px;padding-top:8px;transition:height .7s cubic-bezier(.5,0,.2,1);color:var(--ink)}
+.barlbl{display:flex;gap:10px;justify-content:center;font-size:12.5px;font-weight:800;text-align:center}
+.barlbl span{width:64px}
+.ctrl{display:grid;gap:12px}
+.ctrl label{display:flex;justify-content:space-between;font-weight:800;font-size:15.5px}
+.ctrl label b{color:#C2316F;font-variant-numeric:tabular-nums}
+.ctrl input[type=range]{width:100%;accent-color:var(--pink);height:28px}
+.usefound{border:0;background:var(--night);color:#fff;border-radius:999px;padding:10px 18px;font-weight:800;font-size:15px;display:none;align-self:center}
+.usefound.show{display:inline-block}
+.fv{background:#fff;border-radius:24px;padding:18px;text-align:center;color:var(--ink)}
+.fv .n{font-size:40px;font-weight:900;color:#E23D84;font-variant-numeric:tabular-nums;line-height:1.1}
+.fv .s{font-size:14px;color:#57516F}
+
+.disc{font-size:12.5px;line-height:1.7;color:var(--mute);padding:0 6px}
+.disc a{color:var(--pink2)}
+.draft{background:var(--sun);color:var(--ink);border-radius:16px;padding:10px 14px;font-size:14px;line-height:1.55;font-weight:700}
+#a11y{position:fixed;bottom:14px;left:14px;z-index:60;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:22px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+@media (max-width:420px){
+  .big{font-size:39px} .mid{font-size:27px}
+  .scr{padding:26px 18px}
+  .sthead{grid-template-columns:76px 1fr} .ico{width:76px;height:76px;font-size:42px;border-radius:24px}
+  .total{font-size:46px}
+}
+</style>
 </head>
 <body>
+<div id="sticky" role="status" aria-live="polite">חסכת עד עכשיו <b id="sticky-n">0 ₪</b> בחודש <a href="#sum">לסיכום</a></div>
+<button id="a11y" type="button" aria-label="הגדלת טקסט" title="הגדלת טקסט">♿</button>
 
-<div id="sticky" aria-live="polite">
-  <span>מצאת כבר</span><span class="amount" id="sticky-amount">0 ₪</span><span>בחודש</span>
-  <a href="#calc">כמה זה שווה בעתיד?</a>
-</div>
+<main class="app" dir="rtl" lang="he">
 
-<header class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div>
-  <div class="wrap">
-    <div class="eyebrow">אמא משקיעה · המדריך לכספים האבודים</div>
-    <h1>בין 300 ל 700 ש״ח בחודש <span class="hl">מחכים לך</span> בתוך החשבונות שכבר יש לך</h1>
-    <p class="intro">היי, אני עדי 💛<br>
-    בעמוד הזה יש את כל התסריטים המוכנים שעזרו לי לקבל <b>5,640 ש״ח בשנה</b> בלי לקום מהכיסא. פשוט מעתיקה, מחייגת ומסמנת וי. את כל מה שמצאת נכניס בסוף למחשבון, ותראי מה הכסף הזה יכול לעשות בשבילך.</p>
-    <p style="margin-top:22px"><a href="#stations" class="btn btn-pink">יאללה, בואי נמצא כסף</a></p>
-  </div>
-</header>
 
-<section class="how">
-  <div class="wrap">
-    <h2>ככה זה עובד</h2>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><div><b>בוחרת תחנה.</b> כל תחנה היא שיחה קצרה אחת או לחיצה אחת. 15 דקות וסיימת!</div></div>
-      <div class="step"><div class="num">2</div><div><b>מעתיקה את התסריט ומחייגת.</b> הכל כתוב מילה במילה. את רק קוראת.</div></div>
-      <div class="step"><div class="num">3</div><div><b>רושמת כמה מצאת.</b> המונה למעלה סופר, והמחשבון בסוף מראה לך למה זה שווה הרבה יותר ממה שנדמה.</div></div>
-    </div>
+<!-- 1 · שער -->
+<section class="scr cover center">
+  <span class="tag">🔧 אוטם הנזילות</span>
+  <h1 class="big">בין 300 ל-700 ₪<br>בחודש <em>מחכים לך</em></h1>
+  <svg class="ill" viewBox="0 0 320 190" aria-hidden="true">
+    <defs><linearGradient id="pipe" x1="0" x2="1"><stop offset="0" stop-color="#8AA6FF"/><stop offset="1" stop-color="#B9B3D6"/></linearGradient></defs>
+    <path d="M10 46 H190 a24 24 0 0 1 24 24 V86" fill="none" stroke="url(#pipe)" stroke-width="22" stroke-linecap="round"/>
+    <rect x="198" y="80" width="32" height="16" rx="5" fill="#FF5FA2"/>
+    <circle cx="96" cy="46" r="15" fill="#241E48" stroke="#FF5FA2" stroke-width="5"/>
+    <path d="M96 36v20M86 46h20" stroke="#FF5FA2" stroke-width="4" stroke-linecap="round"/>
+    <g class="drop"><path d="M214 102 q-7 11 0 15 q7-4 0-15z" fill="#8AA6FF"/></g>
+    <g class="drop" style="animation-delay:.8s"><path d="M214 102 q-7 11 0 15 q7-4 0-15z" fill="#8AA6FF"/></g>
+    <g class="drop" style="animation-delay:1.6s"><path d="M214 102 q-7 11 0 15 q7-4 0-15z" fill="#8AA6FF"/></g>
+    <path d="M168 150 h92 l-8 34 h-76z" fill="#FFF0CC" stroke="#FFC24B" stroke-width="4" stroke-linejoin="round"/>
+    <g class="coinpop" style="animation-delay:.6s;transform-origin:196px 146px"><circle cx="196" cy="146" r="12" fill="#FFC24B"/><text x="196" y="151" text-anchor="middle" font-size="13" font-weight="900" fill="#17142E" font-family="Noto Sans Hebrew,Arial">₪</text></g>
+    <g class="coinpop" style="animation-delay:1.1s;transform-origin:222px 140px"><circle cx="222" cy="140" r="12" fill="#3DDBB0"/><text x="222" y="145" text-anchor="middle" font-size="13" font-weight="900" fill="#17142E" font-family="Noto Sans Hebrew,Arial">₪</text></g>
+    <g class="coinpop" style="animation-delay:1.6s;transform-origin:246px 148px"><circle cx="246" cy="148" r="10" fill="#FF5FA2"/></g>
+  </svg>
+  <p class="lead">בתוך החשבונות שכבר יש לך. תסריטים מוכנים, מעתיקה, שולחת, ומסמנת וי.</p>
+  <a class="cta pk" href="#scan">יאללה, בואי נמצא כסף</a>
+  <p class="from">באהבה, עדי 💛</p>
+</section>
+
+<!-- 2 · היי -->
+<section class="scr mintbg">
+  <span class="tag">היי, אני עדי 👋</span>
+  <h2 class="mid">ככה החזרתי לעצמי<br>5,640 ₪ בשנה</h2>
+  <p class="lead">בלי לריב עם נציג ובלי לחכות על הקו. ישבתי עם הטלפון, עברתי על החיובים, ושלחתי את הנוסחים שמחכים לך כאן.</p>
+  <div class="prog">
+    <div class="pstep"><span class="c">☑️</span><span>מסמנת מה יש לך<small>60 שניות, ומקבלת רשימה רק בשבילך</small></span></div>
+    <div class="pstep"><span class="c">📋</span><span>מעתיקה את התסריט<small>כתוב מילה במילה. את רק שולחת או קוראת</small></span></div>
+    <div class="pstep"><span class="c">🎉</span><span>רושמת כמה חסכת<small>המונה סופר, ובסוף רואים למה זה שווה</small></span></div>
   </div>
 </section>
 
-<section class="stations" id="stations">
-  <div class="wrap">
-    <h2 style="margin-bottom:6px">7 תחנות. כל אחת שווה כסף.</h2>
-    <p class="muted" style="margin-bottom:22px">מסודרות מהמהיר והקל אל מה שדורש קצת יותר. התחילי מלמעלה 👇</p>
+<!-- 3 · הבדיקה -->
+<section class="scr dark" id="scan">
+  <span class="tag">⏱️ בדיקה של 60 שניות</span>
+  <h2 class="mid">מה יש לך<br>בבית?</h2>
+  <p class="lead">סמני כל מה שנכון לגבייך. ככה תדעי מאיפה להתחיל.</p>
+  <div class="scan" role="group" aria-label="מה יש לי">
+    <button type="button" data-k="subs" aria-pressed="true"><span class="e">📲</span>אפליקציות ומנויים בטלפון</button>
+    <button type="button" data-k="card" aria-pressed="true"><span class="e">💳</span>כרטיס אשראי, או כמה</button>
+    <button type="button" data-k="bank" aria-pressed="true"><span class="e">🏦</span>חשבון בנק</button>
+    <button type="button" data-k="cell" aria-pressed="true"><span class="e">📱</span>קו סלולרי</button>
+    <button type="button" data-k="net" aria-pressed="false"><span class="e">🌐</span>אינטרנט או טלוויזיה</button>
+    <button type="button" data-k="fixed" aria-pressed="false"><span class="e">🏋️</span>חדר כושר, חניה או חוג</button>
+    <button type="button" data-k="power" aria-pressed="false"><span class="e">⚡</span>חשבון חשמל על שמי</button>
+    <button type="button" data-k="carins" aria-pressed="false"><span class="e">🚗</span>ביטוח רכב או דירה</button>
+    <button type="button" data-k="ins" aria-pressed="false"><span class="e">🛡️</span>ביטוח בריאות או חיים פרטי</button>
+    <button type="button" data-k="loans" aria-pressed="false"><span class="e">📉</span>מינוס או הלוואה</button>
+    <button type="button" data-k="pension" aria-pressed="false"><span class="e">🧾</span>פנסיה או קרן השתלמות</button>
+    <button type="button" data-k="idle" aria-pressed="false"><span class="e">🛋️</span>כסף שיושב בעו״ש</button>
+  </div>
+  <div class="result" aria-live="polite">
+    <span class="cnt" id="r-cnt">מצאנו לך 4 תחנות</span>
+    <span class="range" id="r-range">בין 115 ל-460 ₪</span>
+    <span class="small" style="opacity:1;color:#57516F">בחודש, שאפשר להחזיר אלייך</span>
+    <span class="demo">הערכה גסה להמחשה, לא הבטחה</span>
+    <div class="mylist" id="r-list"></div>
+  </div>
+</section>
 
-    <!-- 1. subscriptions -->
-    <div class="station" id="st-subs">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">👻</span>
-        <span class="titles"><span class="t">המנויים הנסתרים</span><span class="s">5 דקות מהטלפון · אצלי זה היה שווה 300 ₪ בחודש</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">אפליקציות שנרשמת אליהן פעם, ניסיון חינם שהפך לתשלום, אפליקציה שהילדים הורידו. הכסף הזה יורד כל חודש בשקט. שתי לחיצות ואת רואה הכל.</p>
-        <ul>
-          <li><b>יש לך אייפון?</b> לחצי על הלינק הוורוד למטה ותראי את כל המנויים שלך במקום אחד. בטלי כל מה שלא בשימוש.</li>
-          <li><b>יש לך אנדרואיד?</b> אותו דבר בדיוק, בלינק של גוגל.</li>
-          <li><b>הצעד המנצח:</b> פתחי את פירוט האשראי של 3 החודשים האחרונים וחפשי חיובים קטנים שחוזרים על עצמם. כל שם שאת לא מזהה, בדקי אותו.</li>
-        </ul>
-        <div class="links">
-          <a class="link-chip gov" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">🍎 המנויים שלי באייפון</a>
-          <a class="link-chip gov" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">🤖 המנויים שלי באנדרואיד</a>
-        </div>
-        <div class="tip"><b>טיפ של אלופה:</b> מנוי שאת רוצה לשמור אבל משלמת עליו חודשי? בדקי אם יש מסלול שנתי. ברוב האפליקציות זה חיסכון של 30 עד 40 אחוז.</div>
-        <div class="saved">
-          <label for="save-subs">כמה ביטלת בחודש?</label>
-          <input type="number" id="save-subs" min="0" max="2000" inputmode="numeric" placeholder="₪">
-          <button class="save-btn" data-station="subs">מצאתי! 🎉</button>
-        </div>
-      </div>
+<!-- 4 · מפה -->
+<section class="scr creambg" id="map">
+  <span class="tag">המפה שלך</span>
+  <h2 class="mid">13 תחנות,<br>מהקל אל המשמעותי</h2>
+  <p class="lead">תתחילי מלמעלה. כל תחנה היא הודעה אחת, שיחה אחת, או לחיצה אחת.</p>
+  <div class="trip" id="trip"></div>
+</section>
+
+<!-- תחנות -->
+<section class="scr dark st" id="st-subs" data-k="subs">
+  <span class="tag">תחנה 1 · 5 דקות מהטלפון</span>
+  <div class="sthead"><span class="ico">👻</span><div><h2 class="mid">המנויים<br>הנסתרים</h2><span class="worth">אצלי: 300 ₪ בחודש</span></div></div>
+  <p class="lead">ניסיון חינם שהפך לתשלום, אפליקציה שהילדים הורידו, מנוי ששכחת שקיים. זה יורד כל חודש, בשקט.</p>
+  <div class="phone" aria-label="המחשה של רשימת המנויים בטלפון">
+    <div class="scrn">
+      <div class="notch"></div>
+      <b style="font-size:15px">המנויים שלי</b>
+      <div class="sub"><i style="background:#FFE0EC">🎬</i><span>סטרימינג<small>39.90 ₪ לחודש</small></span><span></span></div>
+      <div class="sub hl"><i style="background:#DDF8EF">🧘</i><span>אפליקציית כושר<small>ניסיון שהסתיים</small></span><span class="x">ביטול</span></div>
+      <div class="sub hl"><i style="background:#E5EBFF">🎮</i><span>משחק של הילדים<small>29.90 ₪ לחודש</small></span><span class="x">ביטול</span></div>
+      <div class="sub"><i style="background:#FFF0CC">☁️</i><span>אחסון ענן<small>9.90 ₪ לחודש</small></span><span></span></div>
     </div>
+  </div>
+  <p class="small" style="text-align:center">מצויר להמחשה. השמות והמחירים אצלך יהיו אחרים.</p>
+  <ol class="steps">
+    <li>לוחצת על הכפתור שמתאים לטלפון שלך, ורואה את כל המנויים במקום אחד.</li>
+    <li>מבטלת כל מה שלא בשימוש. ממש עכשיו, לא "אולי בעתיד".</li>
+    <li>פותחת את פירוט האשראי של 3 החודשים האחרונים, ומחפשת חיובים קטנים שחוזרים. שם שאת לא מזהה? בודקת.</li>
+  </ol>
+  <div class="links">
+    <a class="chip" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">🍎 המנויים שלי באייפון</a>
+    <a class="chip" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">🤖 המנויים שלי באנדרואיד</a>
+  </div>
+  <div class="tip"><b>טיפ של אלופה:</b> מנוי שאת רוצה לשמור? בדקי מסלול שנתי, או מסלול משפחתי לכל הבית במקום כמה מנויים נפרדים.</div>
+  <div class="saved"><label for="save-subs">כמה ביטלת בחודש?</label><span class="inp"><input id="save-subs" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
 
-    <!-- 2. credit cards -->
-    <div class="station" id="st-card">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">💳</span>
-        <span class="titles"><span class="t">כרטיסי האשראי</span><span class="s">שיחה של 5 דקות לכל כרטיס · חיסכון ממוצע 15 עד 30 ₪ לכרטיס</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">דמי כרטיס הם עמלה שכמעט תמיד אפשר לקבל עליה פטור, פשוט כי ביקשת. יש לך יותר מכרטיס אחד? עוד יותר שווה. אני הורדתי 60 ₪ בחודש מ 3 כרטיסים.</p>
-        <div class="script">
-          <div class="label">התסריט שלך · העתיקי וקראי</div>
-          <p id="script-card">היי, אני מחזיקה בכרטיס שלכם ומשלמת דמי כרטיס כל חודש.
+<section class="scr creambg st" id="st-card" data-k="card">
+  <span class="tag">תחנה 2 · 5 דקות לכל כרטיס</span>
+  <div class="sthead"><span class="ico">💳</span><div><h2 class="mid">דמי כרטיס<br>האשראי</h2><span class="worth">15 עד 30 ₪ לכל כרטיס</span></div></div>
+  <p class="lead">עמלה שכמעט תמיד אפשר לקבל עליה פטור, רק כי ביקשת. אני הורדתי 60 ₪ בחודש משלושה כרטיסים.</p>
+  <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-card">היי, אני מחזיקה בכרטיס שלכם ומשלמת דמי כרטיס כל חודש.
 אני מבקשת פטור קבוע מדמי הכרטיס.
 אם אין אפשרות לפטור, אני שוקלת לבטל את הכרטיס ולהתרכז בכרטיס אחר שיש לי.
-מה אתם יכולים לעשות בשבילי?</p>
-          <button class="copy-btn" data-copy="script-card">📋 העתקת התסריט</button>
-        </div>
-        <div class="tip"><b>איפה מתקשרים?</b> מספר שירות הלקוחות מודפס על גב הכרטיס שלך. הפכי את הכרטיס וזהו 😉 וכשאת כבר על הקו: בקשי פטור גם על "דמי גביית תשלום נדחה" אם יש.</div>
-        <div class="saved">
-          <label for="save-card">כמה הורדת בחודש?</label>
-          <input type="number" id="save-card" min="0" max="2000" inputmode="numeric" placeholder="₪">
-          <button class="save-btn" data-station="card">מצאתי! 🎉</button>
-        </div>
-      </div>
-    </div>
+מה אתם יכולים לעשות בשבילי?</p><button class="copy" type="button" data-copy="sc-card">📋 העתקת התסריט</button></div>
+  <div class="tip"><b>איפה מתקשרים?</b> המספר מודפס על גב הכרטיס. וכשאת כבר על הקו, בקשי פטור גם מ"דמי גביית תשלום נדחה", אם יש.</div>
+  <div class="saved"><label for="save-card">כמה הורדת בחודש?</label><span class="inp"><input id="save-card" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
 
-    <!-- 3. bank -->
-    <div class="station" id="st-bank">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">🏦</span>
-        <span class="titles"><span class="t">עמלות הבנק</span><span class="s">הודעה אחת בצ׳אט של האפליקציה · 20 עד 40 ₪ בחודש, ועם מינוס גם הרבה יותר</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">יש לך זכות חוקית לעבור ל"מסלול בסיסי" בעמלות: מחיר קבוע ונמוך במקום עמלה על כל פעולה. הבנק חייב לאשר. רוב הנשים פשוט לא יודעות שזה קיים. ובאותה הודעה מבקשות עוד שני דברים: פטור מלא מעמלות (0 עמלות), והורדת הריבית על המינוס. שתי הבקשות האלה לגיטימיות לגמרי, והבנק מאשר אותן הרבה יותר ממה שנדמה לך, במיוחד כשאת מציינת שאת בודקת גם בנקים אחרים.</p>
-        <div class="script">
-          <div class="label">התסריט שלך · העתיקי ושלחי גם בצ׳אט של האפליקציה</div>
-          <p id="script-bank">שלום, אני מבקשת לעבור למסלול העמלות הבסיסי בחשבון שלי, בהתאם להוראות בנק ישראל.
+<section class="scr dark st" id="st-bank" data-k="bank">
+  <span class="tag">תחנה 3 · הודעה אחת בצ׳אט</span>
+  <div class="sthead"><span class="ico">🏦</span><div><h2 class="mid">עמלות<br>הבנק</h2><span class="worth">20 עד 40 ₪ בחודש</span></div></div>
+  <p class="lead">יש לך זכות לעבור ל"מסלול בסיסי": מחיר קבוע ונמוך במקום עמלה על כל פעולה. רוב הנשים פשוט לא יודעות שזה קיים.</p>
+  <div class="script"><span class="lb">התסריט שלך · שלחי בצ׳אט של האפליקציה</span><p id="sc-bank">שלום, אני מבקשת לעבור למסלול העמלות הבסיסי בחשבון שלי, בהתאם להוראות בנק ישראל.
 בנוסף, אני מבקשת לבדוק אפשרות לפטור מלא מעמלות בחשבון (0 עמלות), ולהוריד את שיעור הריבית על המינוס בחשבון שלי.
 אשמח גם לדעת אילו עמלות נגבו ממני בשנה האחרונה ומה ניתן להוזיל או לבטל.
 אני בודקת בימים אלה גם הצעות מבנקים אחרים, ואשמח להישאר אצלכם בתנאים טובים.
-תודה!</p>
-          <button class="copy-btn" data-copy="script-bank">📋 העתקת התסריט</button>
-        </div>
-        <div class="tip"><b>טיפ של אלופה:</b> את ההודעה הזאת את יכולה לשלוח בצ׳אט של אפליקציית הבנק, בלי להמתין לנציג בכלל. שלחי ותמשיכי ביום שלך. ואם יש לך מינוס קבוע, הורדת הריבית עליו שווה לפעמים יותר מכל העמלות ביחד. כשעונים לך, שאלי כמה הריבית היום וכמה היא תהיה אחרי ההורדה, ורשמי את ההפרש למטה.</div>
-        <div class="saved">
-          <label for="save-bank">כמה הורדת בחודש?</label>
-          <input type="number" id="save-bank" min="0" max="2000" inputmode="numeric" placeholder="₪">
-          <button class="save-btn" data-station="bank">מצאתי! 🎉</button>
-        </div>
-      </div>
-    </div>
+תודה!</p><button class="copy" type="button" data-copy="sc-bank">📋 העתקת התסריט</button></div>
+  <div class="tip"><b>טיפ של אלופה:</b> שולחים בצ׳אט וממשיכים ביום, בלי לחכות לנציג. ויש מינוס קבוע? הורדת הריבית עליו שווה לפעמים יותר מכל העמלות ביחד.</div>
+  <div class="saved"><label for="save-bank">כמה הורדת בחודש?</label><span class="inp"><input id="save-bank" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
 
-    <!-- 4. cellular -->
-    <div class="station" id="st-cell">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">📱</span>
-        <span class="titles"><span class="t">הסלולר שלך</span><span class="s">שיחה של 5 דקות · חיסכון ממוצע 30 עד 60 ₪ בחודש</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">רוב המסלולים היום עולים 20 עד 40 ₪. אם את משלמת יותר, את פשוט משלמת על ותק. שיחה אחת למחלקת השימור מסדרת את זה.</p>
-        <div class="script">
-          <div class="label">התסריט שלך · העתיקי וקראי</div>
-          <p id="script-cell">היי, אני לקוחה שלכם כבר תקופה ואני משלמת היום [הסכום שלך] ₪ בחודש.
-ראיתי שיש היום מסלולים דומים ב 25 עד 30 ₪.
+<section class="scr pinkbg st" id="st-cell" data-k="cell">
+  <span class="tag">תחנה 4 · שיחה של 5 דקות</span>
+  <div class="sthead"><span class="ico">📱</span><div><h2 class="mid">הסלולר<br>שלך</h2><span class="worth">30 עד 60 ₪ בחודש</span></div></div>
+  <p class="lead">רוב המסלולים היום עולים 20 עד 40 ₪. משלמת יותר? את משלמת על ותק. שיחה אחת לשימור מסדרת את זה.</p>
+  <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-cell">היי, אני לקוחה שלכם כבר תקופה ואני משלמת היום [הסכום שלך] ₪ בחודש.
+ראיתי שיש היום מסלולים דומים ב-25 עד 30 ₪.
 אני רוצה לעבור למסלול משתלם יותר אצלכם, או לקבל הצעה שתגרום לי להישאר.
-מה אתם יכולים להציע לי?</p>
-          <button class="copy-btn" data-copy="script-cell">📋 העתקת התסריט</button>
-        </div>
-        <div class="tip"><b>טיפ של אלופה:</b> המשפט "אני שוקלת לעבור לחברה אחרת" מעביר אותך אוטומטית לנציג שימור, ושם ההצעות הכי טובות.</div>
-        <div class="links">
-          <a class="link-chip" href="tel:%2A054">📞 פרטנר *054</a>
-          <a class="link-chip" href="tel:%2A123">📞 סלקום *123</a>
-          <a class="link-chip" href="tel:%2A8888">📞 גולן *8888</a>
-          <a class="link-chip" href="tel:%2A5100">📞 הוט מובייל *5100</a>
-        </div>
-        <div class="saved">
-          <label for="save-cell">כמה הורדת בחודש?</label>
-          <input type="number" id="save-cell" min="0" max="2000" inputmode="numeric" placeholder="₪">
-          <button class="save-btn" data-station="cell">מצאתי! 🎉</button>
-        </div>
-      </div>
-    </div>
+מה אתם יכולים להציע לי?</p><button class="copy" type="button" data-copy="sc-cell">📋 העתקת התסריט</button></div>
+  <div class="links">
+    <a class="chip" href="tel:*054">📞 פרטנר ‎*054</a><a class="chip" href="tel:*123">📞 סלקום ‎*123</a>
+    <a class="chip" href="tel:*8888">📞 גולן ‎*8888</a><a class="chip" href="tel:*5100">📞 הוט מובייל ‎*5100</a>
+  </div>
+  <div class="tip"><b>המשפט שפותח דלתות:</b> "אני שוקלת לעבור לחברה אחרת". הוא מעביר אותך לנציג שימור, ושם ההצעות הכי טובות.</div>
+  <div class="saved"><label for="save-cell">כמה הורדת בחודש?</label><span class="inp"><input id="save-cell" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
 
-    <!-- 5. internet/tv -->
-    <div class="station" id="st-net">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">🌐</span>
-        <span class="titles"><span class="t">אינטרנט וטלוויזיה</span><span class="s">שיחה של 10 דקות · חיסכון ממוצע 40 עד 80 ₪ בחודש</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">זה הסעיף שבו אני הורדתי 70 ₪ בחודש בשיחה אחת. חברות התקשורת שומרות את המבצעים הטובים ללקוחות שמתקשרים ומבקשים.</p>
-        <div class="script">
-          <div class="label">התסריט שלך · העתיקי וקראי</div>
-          <p id="script-net">שלום, אני לקוחה שלכם ומשלמת היום [הסכום שלך] ₪ בחודש על החבילה.
+<section class="scr dark st" id="st-net" data-k="net">
+  <span class="tag">תחנה 5 · שיחה של 10 דקות</span>
+  <div class="sthead"><span class="ico">🌐</span><div><h2 class="mid">אינטרנט<br>וטלוויזיה</h2><span class="worth">40 עד 80 ₪ בחודש</span></div></div>
+  <p class="lead">כאן אני הורדתי 70 ₪ בחודש בשיחה אחת. המבצעים הטובים שמורים למי שמתקשרת ומבקשת.</p>
+  <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-net">שלום, אני לקוחה שלכם ומשלמת היום [הסכום שלך] ₪ בחודש על החבילה.
 בדקתי מחירים אצל מתחרים וההצעות שקיבלתי נמוכות משמעותית.
 אני מעדיפה להישאר אצלכם, אז אשמח שתתאימו לי את המחיר או שתציעו לי חבילה משתלמת יותר.
-מה האפשרויות שלי?</p>
-          <button class="copy-btn" data-copy="script-net">📋 העתקת התסריט</button>
-        </div>
-        <div class="tip"><b>טיפ של אלופה:</b> בדקי בחשבונית מה את בכלל צריכה. ערוצי ספורט שאף אחד לא רואה? ממיר שני שמונח בארון? כל אחד כזה שווה 10 עד 30 ₪ בחודש.</div>
-        <div class="links">
-          <a class="link-chip" href="tel:199">📞 בזק 199</a>
-          <a class="link-chip" href="tel:%2A6900">📞 הוט *6900</a>
-          <a class="link-chip" href="tel:%2A2080">📞 יס *2080</a>
-          <a class="link-chip" href="tel:%2A054">📞 פרטנר *054</a>
-        </div>
-        <div class="saved">
-          <label for="save-net">כמה הורדת בחודש?</label>
-          <input type="number" id="save-net" min="0" max="2000" inputmode="numeric" placeholder="₪">
-          <button class="save-btn" data-station="net">מצאתי! 🎉</button>
-        </div>
-      </div>
-    </div>
+מה האפשרויות שלי?</p><button class="copy" type="button" data-copy="sc-net">📋 העתקת התסריט</button></div>
+  <div class="links">
+    <a class="chip" href="tel:199">📞 בזק 199</a><a class="chip" href="tel:*6900">📞 הוט ‎*6900</a>
+    <a class="chip" href="tel:*2080">📞 יס ‎*2080</a><a class="chip" href="tel:*054">📞 פרטנר ‎*054</a>
+  </div>
+  <div class="tip"><b>טיפ של אלופה:</b> עברי על החשבונית. ערוצי ספורט שאף אחד לא רואה? ממיר שני בארון? כל אחד כזה שווה 10 עד 30 ₪ בחודש.</div>
+  <div class="saved"><label for="save-net">כמה הורדת בחודש?</label><span class="inp"><input id="save-net" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
 
-    <!-- 6. insurance -->
-    <div class="station" id="st-ins">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">🛡️</span>
-        <span class="titles"><span class="t">הביטוחים שלך</span><span class="s">10 דקות באתר המדינה · חיסכון ממוצע מאות ₪ בשנה</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">"הר הביטוח" הוא אתר של משרד האוצר שמראה לך בחינם את כל הביטוחים הרשומים על שמך. הרבה נשים מגלות שם ביטוחים כפולים: למשל ביטוח בריאות פרטי שמכסה בדיוק את מה שיש כבר בקופת החולים.</p>
-        <ul>
-          <li>נכנסת עם תעודת זהות, מקבלת קוד לנייד ורואה הכל.</li>
-          <li>מצאת שני ביטוחים שמכסים אותו דבר? זה בדיוק הכסף האבוד שלך.</li>
-          <li>העתיקי את התסריט ושלחי לסוכן או לחברת הביטוח.</li>
-        </ul>
-        <div class="script">
-          <div class="label">התסריט שלך · לשיחה או להודעה לסוכן</div>
-          <p id="script-ins">היי, עשיתי בדיקה בהר הביטוח וראיתי שיש לי [שם הביטוח] וגם [שם הביטוח הנוסף].
+<section class="scr mintbg st" id="st-fixed" data-k="fixed">
+  <span class="tag">תחנה 6 · רגע של כנות</span>
+  <div class="sthead"><span class="ico">🏋️</span><div><h2 class="mid">חדר כושר,<br>חניה וחוגים</h2><span class="worth">50 עד 250 ₪ בחודש</span></div></div>
+  <p class="lead">חניה חודשית שאת צריכה כמה ימים בחודש. חדר כושר שלא נכנסת אליו מאז מרץ. חוג שהילד כבר לא רוצה.</p>
+  <ol class="steps">
+    <li>רושמת כל תשלום קבוע שלא דרך הטלפון: חניה, כושר, חוגים, מועדונים, תרומות בהוראת קבע.</li>
+    <li>לכל אחד, שלוש שניות של החלטה: להשאיר, להוריד מסלול, או לבטל.</li>
+    <li>מבטלת בכתב, במייל או בהודעה, ושומרת את האישור.</li>
+  </ol>
+  <div class="tip"><b>שאלה אחת שעושה סדר:</b> "אם הייתי צריכה להירשם לזה היום מחדש, הייתי נרשמת?" אם התשובה לא, זה הזמן לבטל.</div>
+  <div class="saved"><label for="save-fixed">כמה ביטלת או הורדת בחודש?</label><span class="inp"><input id="save-fixed" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
+
+<section class="scr dark st" id="st-power" data-k="power">
+  <span class="tag">תחנה 7 · 10 דקות</span>
+  <div class="sthead"><span class="ico">⚡</span><div><h2 class="mid">החשמל<br>של הבית</h2><span class="worth">15 עד 40 ₪ בחודש</span></div></div>
+  <p class="lead">היום אפשר לקנות חשמל גם מספק פרטי, בהנחה על התעריף. החשמל, הקווים והתקלות נשארים אצל חברת החשמל. רק החשבון משתנה.</p>
+  <ol class="steps">
+    <li>מוציאה חשבון חשמל אחרון, ובודקת כמה את משלמת בחודש ממוצע.</li>
+    <li>בודקת אם יש לך מונה חכם. חלק מהמסלולים זמינים רק איתו.</li>
+    <li>משווה 2 או 3 ספקים: הנחה קבועה כל היום, או הנחה בשעות מסוימות. בוחרת לפי השעות שבהן הבית צורך הכי הרבה.</li>
+  </ol>
+  <div class="tip"><b>שימי לב:</b> הנחה "בשעות הלילה" שווה רק אם באמת מפעילים אז מכונות ומזגן. אם לא בטוחה, מסלול של הנחה קבועה הוא הפשוט.</div>
+  <div class="saved"><label for="save-power">כמה חסכת בחודש?</label><span class="inp"><input id="save-power" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
+</section>
+
+<section class="scr creambg st" id="st-carins" data-k="carins">
+  <span class="tag">תחנה 8 · פעם בשנה</span>
+  <div class="sthead"><span class="ico">🚗</span><div><h2 class="mid">ביטוח רכב<br>ודירה</h2><span class="worth">מאות ₪ בשנה</span></div></div>
+  <p class="lead">הביטוחים האלה מתחדשים לבד כל שנה, ולא פעם במחיר גבוה יותר. מי ששואלת לפני החידוש, משלמת פחות.</p>
+  <ol class="steps">
+    <li>מוצאת את תאריך החידוש בפוליסה ושמה תזכורת חודש לפני.</li>
+    <li>מבקשת הצעה משתי חברות נוספות, על אותו כיסוי בדיוק.</li>
+    <li>חוזרת עם המספר לחברה שלך, בתסריט הזה.</li>
+  </ol>
+  <div class="script"><span class="lb">התסריט שלך · לשיחה או למייל</span><p id="sc-carins">שלום, הפוליסה שלי מתחדשת בקרוב, ואני משלמת היום [הסכום שלך] ₪ בשנה.
+קיבלתי הצעה על אותו כיסוי בדיוק ב-[הסכום בהצעה] ₪.
+אני מעדיפה להישאר אצלכם. תוכלו להתאים לי את המחיר?</p><button class="copy" type="button" data-copy="sc-carins">📋 העתקת התסריט</button></div>
+  <div class="saved"><label for="save-carins">כמה חסכת בשנה? (נחלק ל-12 בשבילך)</label><span class="inp"><input id="save-carins" type="number" inputmode="numeric" min="0" placeholder="0" data-divisor="12">₪</span><button class="go" type="button">מצאתי! 🎉</button><span class="pm" id="pm-carins"></span></div>
+</section>
+
+<section class="scr dark st" id="st-ins" data-k="ins">
+  <span class="tag">תחנה 9 · 10 דקות באתר המדינה</span>
+  <div class="sthead"><span class="ico">🛡️</span><div><h2 class="mid">ביטוחים<br>כפולים</h2><span class="worth">מאות ₪ בשנה</span></div></div>
+  <p class="lead">"הר הביטוח" של משרד האוצר מראה בחינם את כל הביטוחים על שמך. הרבה נשים מגלות שם כפל: שני ביטוחים שמכסים את אותו דבר.</p>
+  <ol class="steps">
+    <li>נכנסת עם תעודת זהות ומקבלת קוד לנייד.</li>
+    <li>מחפשת שני ביטוחים מאותו סוג, למשל שני ביטוחי בריאות.</li>
+    <li>שולחת לסוכן או לחברת הביטוח את התסריט.</li>
+  </ol>
+  <div class="script"><span class="lb">התסריט שלך · לשיחה או להודעה לסוכן</span><p id="sc-ins">היי, עשיתי בדיקה בהר הביטוח וראיתי שיש לי [שם הביטוח] וגם [שם הביטוח הנוסף].
 אשמח להבין ממך: מה כל אחד מהם מכסה בפועל, והאם יש ביניהם כפל.
 אם יש כפל, אני מבקשת לבטל את המיותר ולקבל אישור על הביטול במייל.
-תודה!</p>
-          <button class="copy-btn" data-copy="script-ins">📋 העתקת התסריט</button>
-        </div>
-        <div class="links">
-          <a class="link-chip gov" href="https://harb.cma.gov.il" target="_blank" rel="noopener">⛰️ הר הביטוח · אתר המדינה</a>
-        </div>
-        <div class="saved">
-          <label for="save-ins">כמה הורדת בחודש?</label>
-          <input type="number" id="save-ins" min="0" max="2000" inputmode="numeric" placeholder="₪">
-          <button class="save-btn" data-station="ins">מצאתי! 🎉</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7. har hakesef -->
-    <div class="station" id="st-har">
-      <button class="st-head" aria-expanded="false">
-        <span class="emoji">💰</span>
-        <span class="titles"><span class="t">בונוס: כסף שכבר שלך ורק מחכה</span><span class="s">5 דקות · יש נשים שמצאו שם עשרות אלפי ₪</span></span>
-        <span class="badge">✓ בוצע</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="st-body">
-        <p class="why">"הר הכסף" של משרד האוצר מאתר בחינם חשבונות בנק רדומים, קופות גמל ישנות וכספי ביטוח על שמך ועל שם קרובים שנפטרו. זה ממש כסף אבוד, פשוטו כמשמעו, והמדינה בנתה אתר כדי להחזיר לך אותו.</p>
-        <ul>
-          <li>נכנסת עם תעודת זהות והמערכת סורקת את כל הגופים הפיננסיים.</li>
-          <li>נמצא משהו? האתר מכוון אותך בדיוק איך למשוך אותו.</li>
-          <li>שווה לעשות גם עבור ההורים שלך.</li>
-        </ul>
-        <div class="links">
-          <a class="link-chip gov" href="https://itur.mof.gov.il" target="_blank" rel="noopener">⛰️ הר הכסף · אתר המדינה</a>
-        </div>
-        <div class="saved">
-          <label for="save-har">מצאת סכום חד פעמי? רשמי כמה מצאת</label>
-          <input type="number" id="save-har" min="0" max="1000000" inputmode="numeric" placeholder="₪" data-divisor="12">
-          <button class="save-btn" data-station="har">מצאתי! 🎉</button>
-          <span class="per-month" id="pm-har" aria-live="polite"></span>
-        </div>
-      </div>
-    </div>
-
-  </div>
+תודה!</p><button class="copy" type="button" data-copy="sc-ins">📋 העתקת התסריט</button></div>
+  <div class="links"><a class="chip" href="https://harb.cma.gov.il" target="_blank" rel="noopener">⛰️ הר הביטוח · אתר המדינה</a></div>
+  <div class="tip"><b>חשוב:</b> לא מבטלים ביטוח לפני שמבינים מה הוא מכסה. קודם שואלים, ורק אז מחליטים.</div>
+  <div class="saved"><label for="save-ins">כמה הורדת בחודש?</label><span class="inp"><input id="save-ins" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
 </section>
 
-<!-- calculator -->
-<section class="calc-section" id="calc">
-  <div class="wrap">
-    <div class="eyebrow" style="color:var(--ink)">החלק הכי חשוב במדריך</div>
-    <h2>ועכשיו, הקסם: מה הכסף שמצאת יכול לעשות בשבילך</h2>
-    <p style="margin-top:10px">לחסוך זה שלב אחד. אמא משקיעה לוקחת את הכסף שהתפנה ושמה אותו לעבוד בשבילה. ככה נראית ריבית דריבית על הכספים האבודים שלך:</p>
-    <div class="calc-card">
-      <button class="use-found" id="use-found">✨ להשתמש בסכום שמצאתי במדריך (<span id="found-in-btn">0</span> ₪)</button>
-      <div class="calc-row">
-        <label for="c-monthly">כמה כסף אבוד מצאת בחודש? <output id="o-monthly">700 ₪</output></label>
-        <input type="range" id="c-monthly" min="100" max="2000" step="50" value="700">
-      </div>
-      <div class="calc-row">
-        <label for="c-years">לכמה שנים תשקיעי אותו? <output id="o-years">30 שנה</output></label>
-        <input type="range" id="c-years" min="5" max="40" step="1" value="30">
-      </div>
-      <div class="calc-row">
-        <label for="c-rate">תשואה שנתית ממוצעת <output id="o-rate">8%</output></label>
-        <input type="range" id="c-rate" min="2" max="12" step="0.5" value="8">
-      </div>
-      <div class="result" aria-live="polite">
-        <div class="lead-line">רק מהכספים האבודים שמצאת, תוכלי לייצר לעתיד שלך:</div>
-        <div class="big" id="r-total">1,043,252 ₪</div>
-        <div class="split">מתוכם הפקדת מהכיס <b id="r-deposited">252,000 ₪</b> · והריבית עשתה בשבילך <b id="r-profit">791,252 ₪</b></div>
-      </div>
-      <p class="disclaimer">* החישוב להמחשה בלבד ומבוסס על תשואה שנתית ממוצעת בהתבסס על נתוני עבר של שוקי ההון. תשואות עבר אינן מבטיחות תשואות עתיד. אין באמור ייעוץ השקעות, המלצה או תחליף לייעוץ המתחשב בנתונים ובצרכים האישיים שלך.</p>
-    </div>
-  </div>
+<section class="scr pinkbg st" id="st-loans" data-k="loans">
+  <span class="tag">תחנה 10 · שיחה אחת לבנק</span>
+  <div class="sthead"><span class="ico">📉</span><div><h2 class="mid">הלוואות<br>ומינוס</h2><span class="worth">לפעמים הנזילה הכי גדולה</span></div></div>
+  <p class="lead">ריבית על הלוואה או על מינוס יכולה להיות גבוהה מאוד. שווה לבדוק כמה את משלמת, ולבקש הוזלה.</p>
+  <div class="script"><span class="lb">התסריט שלך · לשיחה או לצ׳אט</span><p id="sc-loans">שלום, יש לי הלוואה אצלכם ואני רוצה לבדוק אותה.
+אשמח לדעת מה הריבית שאני משלמת היום, ומה אפשר לעשות כדי להוריד אותה.
+אני בודקת גם הצעות במקומות אחרים, ואשמח להישאר אצלכם בתנאים טובים.</p><button class="copy" type="button" data-copy="sc-loans">📋 העתקת התסריט</button></div>
+  <div class="tip"><b>יש כמה הלוואות?</b> שאלי גם על איחוד שלהן. ובמצב מורכב, איש מקצוע יכול לעזור.</div>
+  <div class="saved"><label for="save-loans">כמה ירד ההחזר החודשי?</label><span class="inp"><input id="save-loans" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
 </section>
 
-<!-- CTA (20/10/2026): מהמדריך להדרכה החיה, לא לדף המכירה. הלינק מדיד ב-/links (webinar-guide1) ומתגלגל למחזור הפעיל -->
-<section class="cta">
-  <div class="wrap">
-    <div class="card">
-      <div class="eyebrow">הצעד הבא שלך</div>
-      <h2>רוצה לראות איך הכסף הזה הופך לחצי מיליון לכל ילד?</h2>
-      <p>מצאת את הכסף. עכשיו מגיע החלק שבאמת משנה את העתיד: לגרום לו לעבוד בשבילך. בהדרכה החיה הקרובה שלי אני משתפת את השיטה המלאה שלי, בלי פילטרים: איך לבנות לכל ילד גב כלכלי של חצי מיליון ש״ח, מהכסף שכבר נכנס לכם הביתה. שעה בזום. ללא עלות.</p>
-      <a class="btn btn-pink" id="cta-webinar" href="https://academy.mominvest.co.il/r/webinar-guide1">לשריון מקום בהדרכה החיה הקרובה »</a>
-      <p class="or">ואם את רוצה קודם להכיר מקרוב: בקבוצת הווטסאפ של אמא משקיעה אני משתפת עוד צעדים קטנים בדיוק כמו אלה. בחינם, ואפשר לצאת מתי שרוצים.</p>
-      <a class="btn btn-wa" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"/><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22.5l5.85-1.53a9.83 9.83 0 0 0 4.19.94h.01c5.43 0 9.86-4.43 9.86-9.87A9.8 9.8 0 0 0 19 4.9a9.8 9.8 0 0 0-6.96-2.9Zm0 17.98h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.47.91.93-3.38-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.21-8.2a8.15 8.15 0 0 1 5.8 2.4 8.15 8.15 0 0 1 2.4 5.81c0 4.52-3.68 8.2-8.2 8.2Z"/></svg>להצטרפות לקבוצת הווטסאפ של אמא משקיעה</a>
-    </div>
-  </div>
+<section class="scr dark st" id="st-pension" data-k="pension">
+  <span class="tag">תחנה 11 · שיחה אחת</span>
+  <div class="sthead"><span class="ico">🧾</span><div><h2 class="mid">דמי הניהול<br>בפנסיה</h2><span class="worth">נראה קטן, מצטבר לאורך שנים</span></div></div>
+  <p class="lead">קרן פנסיה וקרן השתלמות גובות דמי ניהול כל חודש, מכסף שלך. בבקשה אחת אפשר לבקש להוריד אותם.</p>
+  <ol class="steps">
+    <li>פותחת את הדוח השנתי, או את האזור האישי באתר של הקרן.</li>
+    <li>מוצאת שני מספרים: דמי ניהול מההפקדה, ודמי ניהול מהצבירה.</li>
+    <li>שולחת לקרן את התסריט.</li>
+  </ol>
+  <div class="script"><span class="lb">התסריט שלך · לשיחה או לצ׳אט באתר</span><p id="sc-pension">שלום, אני עמיתה אצלכם ורוצה לבדוק את דמי הניהול שלי.
+אשמח לדעת כמה אני משלמת היום מההפקדה ומהצבירה.
+אני מבקשת הצעה להורדת דמי הניהול. אני בודקת גם הצעות מקרנות אחרות, ואשמח להישאר אצלכם בתנאים טובים.</p><button class="copy" type="button" data-copy="sc-pension">📋 העתקת התסריט</button></div>
+  <div class="tip"><b>שימי לב:</b> התחנה הזאת לא מחזירה כסף לעו״ש החודש. היא משאירה יותר כסף בחיסכון שלך, כל שנה, עד הפרישה.</div>
+  <div class="saved"><label for="save-pension">יודעת בכמה ירד בחודש? אפשר לרשום</label><span class="inp"><input id="save-pension" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <p>המדריך נכתב באהבה על ידי עדי סומך · אמא משקיעה. המידע בעמוד זה הוא כללי בלבד ואינו מהווה ייעוץ פיננסי, ביטוחי או השקעות. מספרי הטלפון והלינקים נכונים למועד הפרסום.</p>
-    <p>העמוד תומך בניווט מקלדת ובהגדלת טקסט. נתקלת בקושי נגישות? כתבי לנו: mominvest10x@gmail.com</p>
-    <p>העמוד משתמש בפיקסל של מטא (פייסבוק ואינסטגרם) למדידת ביצועי הפרסום. הפיקסל אוסף נתוני שימוש אנונימיים בהתאם למדיניות הפרטיות של מטא, ואפשר לחסום אותו בהגדרות הדפדפן.</p>
-    <p>עוד מאמרים של עדי: <a href="https://mominvest.co.il/blog/kesef-avud/">איך למצוא כסף אבוד</a> · <a href="https://mominvest.co.il/blog/marvichim-yafe-lo-nishar/">תקציב משפחתי בלי אקסל</a> · <a href="https://mominvest.co.il/blog/kesef-baovesh/">מה לעשות עם הכסף בעו״ש</a> · <a href="https://mominvest.co.il/blog/keren-kaspit/">מה זה קרן כספית</a> · <a href="https://mominvest.co.il/">אמא משקיעה</a></p>
-  </div>
-</footer>
+<section class="scr creambg st" id="st-idle" data-k="idle">
+  <span class="tag">תחנה 12 · הנזילה השקטה</span>
+  <div class="sthead"><span class="ico">🛋️</span><div><h2 class="mid">הכסף שיושב<br>בעו״ש</h2><span class="worth">כסף שלא עובד בשבילך</span></div></div>
+  <p class="lead">כסף שיושב בעו״ש לרוב לא מרוויח כלום, והמחירים בחוץ ממשיכים לעלות. זו נזילה שלא רואים בפירוט החיובים.</p>
+  <ol class="steps">
+    <li>בודקת כמה כסף יושב בעו״ש מעבר להוצאות של החודש הקרוב.</li>
+    <li>מבדילה בין כסף שתצטרכי בקרוב, לכסף שיכול לחכות.</li>
+    <li>קוראת את המאמר שלי על מה אפשר לעשות עם הכסף הזה.</li>
+  </ol>
+  <div class="links"><a class="chip" href="https://mominvest.co.il/blog/kesef-baovesh/" target="_blank" rel="noopener">📖 מה לעשות עם הכסף בעו״ש</a></div>
+  <div class="tip"><b>בלי לחץ:</b> זה מידע כללי ולא המלצה. את ההחלטה מה לעשות עם הכסף עושים לפי המצב והמטרות שלך.</div>
+</section>
 
-<button id="a11y-btn" aria-label="תפריט נגישות" title="נגישות">♿</button>
-<div id="a11y-menu" role="menu">
-  <button id="a11y-text">הגדלת טקסט</button>
-  <button id="a11y-contrast">ניגודיות מוגברת</button>
-</div>
+<section class="scr mintbg st" id="st-har" data-k="har">
+  <span class="tag">🎁 בונוס · תחנה 13 · 5 דקות</span>
+  <div class="sthead"><span class="ico">💰</span><div><h2 class="mid">כסף שכבר<br>שלך</h2><span class="worth">יש שמצאו עשרות אלפי ₪</span></div></div>
+  <p class="lead">"הר הכסף" של משרד האוצר מאתר בחינם חשבונות רדומים, קופות גמל ישנות וכספי ביטוח על שמך. כסף אבוד, פשוטו כמשמעו.</p>
+  <ol class="steps">
+    <li>נכנסת עם תעודת זהות, והמערכת סורקת את כל הגופים הפיננסיים.</li>
+    <li>נמצא משהו? האתר מראה בדיוק איך למשוך אותו.</li>
+    <li>שווה לבדוק גם עבור ההורים שלך.</li>
+  </ol>
+  <div class="links"><a class="chip" href="https://itur.mof.gov.il" target="_blank" rel="noopener">⛰️ הר הכסף · אתר המדינה</a></div>
+  <div class="saved"><label for="save-har">מצאת סכום חד פעמי? רשמי כמה</label><span class="inp"><input id="save-har" type="number" inputmode="numeric" min="0" placeholder="0" data-divisor="12">₪</span><button class="go" type="button">מצאתי! 🎉</button><span class="pm" id="pm-har"></span></div>
+</section>
+
+<!-- סיכום -->
+<section class="scr creambg center" id="sum">
+  <span class="tag">הסיכום שלך</span>
+  <h2 class="mid">החזרת לעצמך</h2>
+  <div class="total" id="sum-n">0 ₪</div>
+  <p class="lead">בחודש. ובשנה זה <b id="sum-y">0 ₪</b>.</p>
+  <p class="small" id="sum-c">עוד לא רשמת חיסכון. תחזרי לתחנה הראשונה, זה לוקח 5 דקות 💛</p>
+  <svg class="ill" viewBox="0 0 320 120" aria-hidden="true" style="max-height:130px">
+    <path d="M20 100 H300" stroke="#F3C8DA" stroke-width="3" stroke-linecap="round"/>
+    <rect x="40" y="70" width="44" height="30" rx="8" fill="#8AA6FF"/>
+    <rect x="110" y="52" width="44" height="48" rx="8" fill="#3DDBB0"/>
+    <rect x="180" y="32" width="44" height="68" rx="8" fill="#FFC24B"/>
+    <rect x="250" y="10" width="44" height="90" rx="8" fill="#FF5FA2"/>
+    <text x="272" y="44" text-anchor="middle" font-size="22" fill="#fff" font-family="Noto Sans Hebrew,Arial">★</text>
+  </svg>
+</section>
+
+<!-- המחשבון -->
+<section class="scr dark" id="calc">
+  <span class="tag">✨ החלק הכי חשוב</span>
+  <h2 class="mid">ועכשיו הקסם:<br>מה הכסף הזה יכול לעשות</h2>
+  <p class="lead">לחסוך זה שלב אחד. אמא משקיעה לוקחת את הכסף שהתפנה, ושמה אותו לעבוד בשבילה.</p>
+  <button class="usefound" id="usefound" type="button">✨ להשתמש בסכום שמצאתי (<span id="uf-n">0</span> ₪)</button>
+  <div class="ctrl">
+    <label for="c-m">כמה בחודש? <b id="o-m">700 ₪</b></label><input id="c-m" type="range" min="100" max="3000" step="50" value="700">
+    <label for="c-y">לכמה שנים? <b id="o-y">20 שנה</b></label><input id="c-y" type="range" min="5" max="35" step="1" value="20">
+  </div>
+  <div class="bars" aria-hidden="true">
+    <div class="bar" id="b-dep" style="background:#8AA6FF;height:40%"></div>
+    <div class="bar" id="b-fv" style="background:#FF5FA2;height:100%;color:#fff"></div>
+  </div>
+  <div class="barlbl" aria-hidden="true"><span>מה שהפקדת</span><span>מה שיכול להצטבר</span></div>
+  <div class="fv">
+    <div class="s">בתשואה שנתית ממוצעת של 7%, להמחשה</div>
+    <div class="n" id="r-fv">0 ₪</div>
+    <div class="s">מתוכם הפקדת <b id="r-dep">0 ₪</b>, והריבית דריבית הוסיפה <b id="r-pr">0 ₪</b></div>
+  </div>
+  <p class="small">* חישוב להמחשה בלבד, לפי תשואה שנתית ממוצעת בהתבסס על נתוני עבר של שוקי ההון. תשואות עבר אינן מבטיחות תשואות עתיד. אין באמור ייעוץ השקעות או המלצה.</p>
+</section>
+
+<!-- הצעד הבא -->
+<section class="scr pinkbg center">
+  <span class="tag">הצעד הבא שלך</span>
+  <h2 class="mid">מצאת את הכסף.<br>עכשיו נגרום לו לעבוד</h2>
+  <svg class="ill" viewBox="0 0 320 120" aria-hidden="true" style="max-height:130px">
+    <rect x="70" y="14" width="180" height="100" rx="18" fill="#fff"/>
+    <rect x="86" y="30" width="148" height="60" rx="10" fill="#FFE0EC"/>
+    <circle cx="160" cy="56" r="16" fill="#FF5FA2"/><path d="M155 48v16l13-8z" fill="#fff"/>
+    <rect x="96" y="98" width="60" height="8" rx="4" fill="#3DDBB0"/><rect x="164" y="98" width="40" height="8" rx="4" fill="#FFC24B"/>
+  </svg>
+  <p class="lead">בהדרכה החיה הקרובה שלי אני משתפת את השיטה המלאה: איך לבנות לכל ילד גב כלכלי של חצי מיליון ₪, מהכסף שכבר נכנס הביתה. שעה בזום, בלי עלות.</p>
+  <a class="cta" href="https://academy.mominvest.co.il/r/webinar-guide1">לשריון מקום בהדרכה החיה »</a>
+  <p class="small" style="opacity:.95">רוצה קודם להכיר? בקבוצת הווטסאפ אני משתפת עוד צעדים קטנים כאלה. בחינם, ואפשר לצאת מתי שרוצים.</p>
+  <a class="cta wa" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener">להצטרפות לקבוצת הווטסאפ</a>
+</section>
+
+<p class="disc">המדריך נכתב באהבה על ידי עדי סומך · אמא משקיעה. המידע כללי בלבד ואינו ייעוץ פיננסי, ביטוחי, פנסיוני או ייעוץ השקעות, ואינו מותאם למצב האישי שלך. הטווחים במדריך הם הערכה להמחשה ולא הבטחה. מספרי הטלפון והקישורים נכונים למועד הפרסום. הסכומים שאת רושמת נשמרים רק בדפדפן שלך.<br>
+נתקלת בקושי נגישות? כתבי לנו: <a href="mailto:mominvest10x@gmail.com">mominvest10x@gmail.com</a><br>
+העמוד משתמש בפיקסל של מטא למדידת ביצועי הפרסום.<br>
+עוד מאמרים של עדי: <a href="https://mominvest.co.il/blog/kesef-avud/">איך למצוא כסף אבוד</a> · <a href="https://mominvest.co.il/blog/marvichim-yafe-lo-nishar/">תקציב משפחתי בלי אקסל</a> · <a href="https://mominvest.co.il/blog/keren-kaspit/">מה זה קרן כספית</a> · <a href="https://mominvest.co.il/">אמא משקיעה</a></p>
+
+</main>
 
 <script>
 (function(){
-  var STORAGE_KEY='foundMoneyGuide.v1';
-  var state={savings:{}};
-  try{var raw=localStorage.getItem(STORAGE_KEY); if(raw) state=JSON.parse(raw)||state;}catch(e){}
-  if(!state.savings) state.savings={};
-
-  function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}}
-  function totalFound(){var t=0;for(var k in state.savings){t+=Number(state.savings[k])||0;}return Math.round(t);}
+  var KEY='foundMoneyGuide.v1', SCAN='leaksScan.v1';
+  var ST=[ // key, emoji, short name, monthly range [lo,hi] (null = לא נספר בטווח)
+    ['subs','👻','מנויים',[50,300]],['card','💳','אשראי',[15,60]],['bank','🏦','בנק',[20,40]],
+    ['cell','📱','סלולר',[30,60]],['net','🌐','אינטרנט',[40,80]],['fixed','🏋️','כושר וחניה',[50,250]],
+    ['power','⚡','חשמל',[15,40]],['carins','🚗','ביטוח רכב',[20,60]],['ins','🛡️','ביטוחים כפולים',[30,150]],
+    ['loans','📉','הלוואות',[30,150]],['pension','🧾','פנסיה',null],['idle','🛋️','העו״ש',null],['har','💰','הר הכסף',null]
+  ];
+  var state={savings:{},raw:{}}, picks=null;
+  try{var r=localStorage.getItem(KEY); if(r){state=JSON.parse(r)||state;}}catch(e){}
+  state.savings=state.savings||{}; state.raw=state.raw||{};
+  try{var p=localStorage.getItem(SCAN); if(p) picks=JSON.parse(p);}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
   function fmt(n){return Math.round(n).toLocaleString('he-IL');}
+  function total(){var t=0;for(var k in state.savings)t+=Number(state.savings[k])||0;return Math.round(t);}
 
-  /* accordions */
-  document.querySelectorAll('.st-head').forEach(function(head){
-    head.addEventListener('click',function(){
-      var st=head.closest('.station');
-      var open=st.getAttribute('data-open')==='1';
-      st.setAttribute('data-open',open?'0':'1');
-      head.setAttribute('aria-expanded',open?'false':'true');
+  /* מפה */
+  var trip=document.getElementById('trip');
+  trip.innerHTML=ST.map(function(s,i){return '<a class="stop" id="stop-'+s[0]+'" href="#st-'+s[0]+'"><span class="n">'+s[1]+'</span>'+s[2]+'<small>תחנה '+(i+1)+'</small></a>';}).join('');
+
+  /* בדיקה */
+  var btns=[].slice.call(document.querySelectorAll('.scan button'));
+  if(picks){btns.forEach(function(b){b.setAttribute('aria-pressed',picks.indexOf(b.dataset.k)>-1?'true':'false');});}
+  function scan(){
+    var on=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).map(function(b){return b.dataset.k;});
+    try{localStorage.setItem(SCAN,JSON.stringify(on));}catch(e){}
+    var lo=0,hi=0,n=0,list=[];
+    ST.forEach(function(s){
+      var rel=on.indexOf(s[0])>-1||s[0]==='har';
+      document.getElementById('stop-'+s[0]).classList.toggle('skip',!rel);
+      document.getElementById('st-'+s[0]).classList.toggle('skipme',!rel);
+      if(rel){n++;list.push('<a href="#st-'+s[0]+'">'+s[1]+' '+s[2]+'</a>');if(s[3]){lo+=s[3][0];hi+=s[3][1];}}
+    });
+    document.getElementById('r-cnt').textContent='מצאנו לך '+n+' תחנות';
+    document.getElementById('r-range').textContent=lo?('בין '+fmt(lo)+' ל-'+fmt(hi)+' ₪'):'בואי נבדוק';
+    document.getElementById('r-list').innerHTML=list.join('');
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');scan();});});
+  scan();
+
+  /* העתקה */
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.getElementById(b.dataset.copy).innerText;
+      function ok(){b.classList.add('done');b.textContent='✓ הועתק! עכשיו רק לשלוח';setTimeout(function(){b.classList.remove('done');b.textContent='📋 העתקת התסריט';},2500);}
+      function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(a);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb);}else fb();
     });
   });
 
-  /* copy buttons */
-  document.querySelectorAll('.copy-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var el=document.getElementById(btn.getAttribute('data-copy'));
-      var text=el.innerText;
-      function ok(){btn.classList.add('copied');btn.textContent='✓ הועתק! עכשיו רק לחייג';
-        setTimeout(function(){btn.classList.remove('copied');btn.textContent='📋 העתקת התסריט';},2500);}
-      if(navigator.clipboard&&navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).then(ok,function(){fallback();});
-      }else{fallback();}
-      function fallback(){
-        var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);
-        ta.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(ta);
-      }
-    });
+  /* חיסכון */
+  var sticky=document.getElementById('sticky'), uf=document.getElementById('usefound');
+  function refresh(){
+    var t=total();
+    document.getElementById('sticky-n').textContent=fmt(t)+' ₪';
+    document.getElementById('sum-n').textContent=fmt(t)+' ₪';
+    document.getElementById('sum-y').textContent=fmt(t*12)+' ₪';
+    document.getElementById('uf-n').textContent=fmt(t);
+    var done=Object.keys(state.savings).filter(function(k){return state.savings[k]>0;}).length;
+    document.getElementById('sum-c').textContent=t>0?('סגרת '+done+' נזילות. כל הכבוד לך 💛'):'עוד לא רשמת חיסכון. תחזרי לתחנה הראשונה, זה לוקח 5 דקות 💛';
+    sticky.classList.toggle('show',t>0); uf.classList.toggle('show',t>0);
+    ST.forEach(function(s){var ok=Number(state.savings[s[0]])>0;document.getElementById('stop-'+s[0]).classList.toggle('ok',ok);document.getElementById('st-'+s[0]).classList.toggle('ok',ok);});
+  }
+  function pm(k){var i=document.getElementById('save-'+k),o=document.getElementById('pm-'+k);if(!i||!o)return;var v=Number(i.value)||0;o.textContent=v>0?'חילקתי בשבילך: זה '+fmt(v/12)+' ₪ בחודש למונה 😉':'';}
+  document.querySelectorAll('.saved').forEach(function(box){
+    var inp=box.querySelector('input'), go=box.querySelector('.go'), k=inp.id.replace('save-','');
+    if(state.raw[k]!=null)inp.value=state.raw[k]; else if(state.savings[k])inp.value=state.savings[k];
+    inp.addEventListener('input',function(){pm(k);}); pm(k);
+    function commit(){
+      var raw=Math.max(0,Number(inp.value)||0), d=Number(inp.getAttribute('data-divisor'))||1, v=Math.round(raw/d);
+      if(v>0){state.savings[k]=v;state.raw[k]=raw;go.textContent='נשמר ✓';}else{delete state.savings[k];delete state.raw[k];go.textContent='מצאתי! 🎉';}
+      save();refresh();
+    }
+    go.addEventListener('click',commit);
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')commit();});
+    if(state.savings[k]>0)go.textContent='נשמר ✓';
   });
+  refresh();
 
-  /* save buttons + sticky counter */
-  var sticky=document.getElementById('sticky');
-  var stickyAmount=document.getElementById('sticky-amount');
-  var useFoundBtn=document.getElementById('use-found');
-  var foundInBtn=document.getElementById('found-in-btn');
-
-  function refreshCounter(){
-    var t=totalFound();
-    stickyAmount.textContent=fmt(t)+' ₪';
-    if(t>0){sticky.classList.add('show');useFoundBtn.classList.add('show');foundInBtn.textContent=fmt(t);}
-    else{sticky.classList.remove('show');useFoundBtn.classList.remove('show');}
-  }
-
-  document.querySelectorAll('.save-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var key=btn.getAttribute('data-station');
-      var input=btn.closest('.saved').querySelector('input');
-      var raw=Math.max(0,Number(input.value)||0);
-      var divisor=Number(input.getAttribute('data-divisor'))||1;
-      var val=Math.round(raw/divisor);
-      state.savings[key]=val;
-      state.raw=state.raw||{};
-      state.raw[key]=raw;
-      var st=btn.closest('.station');
-      if(val>0){st.classList.add('done');}else{st.classList.remove('done');delete state.savings[key];}
-      persist();refreshCounter();
-    });
-  });
-
-  /* restore saved values */
-  for(var k in state.savings){
-    var input=document.getElementById('save-'+k);
-    if(input){input.value=(state.raw&&state.raw[k])||state.savings[k];
-      var st=document.getElementById('st-'+k);
-      if(st&&Number(state.savings[k])>0)st.classList.add('done');}
-  }
-  refreshCounter();
-
-  /* live monthly split for one-time amounts */
-  var harInput=document.getElementById('save-har'),pm=document.getElementById('pm-har');
-  if(harInput&&pm){
-    var showPm=function(){
-      var raw=Number(harInput.value)||0;
-      pm.textContent=raw>0?'חילקתי בשבילך: זה '+fmt(raw/12)+' ₪ בחודש למונה 😉':'';
-    };
-    harInput.addEventListener('input',showPm);showPm();
-  }
-
-  /* calculator */
-  var cm=document.getElementById('c-monthly'),cy=document.getElementById('c-years'),cr=document.getElementById('c-rate');
-  var om=document.getElementById('o-monthly'),oy=document.getElementById('o-years'),or_=document.getElementById('o-rate');
-  var rt=document.getElementById('r-total'),rd=document.getElementById('r-deposited'),rp=document.getElementById('r-profit');
-
+  /* מחשבון */
+  var cm=document.getElementById('c-m'),cy=document.getElementById('c-y');
   function calc(){
-    var monthly=Number(cm.value),years=Number(cy.value),annual=Number(cr.value)/100;
-    om.textContent=fmt(monthly)+' ₪';
-    oy.textContent=years+' שנה';
-    or_.textContent=(annual*100).toLocaleString('he-IL',{maximumFractionDigits:1})+'%';
-    var r=annual/12,n=years*12;
-    var fv=r>0?monthly*((Math.pow(1+r,n)-1)/r):monthly*n;
-    var deposited=monthly*n;
-    rt.textContent=fmt(fv)+' ₪';
-    rd.textContent=fmt(deposited)+' ₪';
-    rp.textContent=fmt(fv-deposited)+' ₪';
+    var m=Number(cm.value),y=Number(cy.value),r=0.07/12,n=y*12;
+    var fv=m*((Math.pow(1+r,n)-1)/r),dep=m*n;
+    document.getElementById('o-m').textContent=fmt(m)+' ₪';
+    document.getElementById('o-y').textContent=y+' שנה';
+    document.getElementById('r-fv').textContent=fmt(fv)+' ₪';
+    document.getElementById('r-dep').textContent=fmt(dep)+' ₪';
+    document.getElementById('r-pr').textContent=fmt(fv-dep)+' ₪';
+    document.getElementById('b-dep').style.height=Math.max(8,dep/fv*100)+'%';
+    document.getElementById('b-dep').textContent='';
   }
-  [cm,cy,cr].forEach(function(el){el.addEventListener('input',calc);});
-  calc();
+  cm.addEventListener('input',calc);cy.addEventListener('input',calc);calc();
+  uf.addEventListener('click',function(){var t=total();if(t>0){cm.value=Math.min(Math.max(t,100),3000);calc();}});
 
-  useFoundBtn.addEventListener('click',function(){
-    var t=totalFound();
-    if(t>0){cm.value=Math.min(Math.max(t,Number(cm.min)),Number(cm.max));calc();}
-  });
-
-  /* accessibility widget */
-  var aBtn=document.getElementById('a11y-btn'),aMenu=document.getElementById('a11y-menu');
-  aBtn.addEventListener('click',function(){aMenu.classList.toggle('open');});
-  document.getElementById('a11y-text').addEventListener('click',function(){document.body.classList.toggle('big-text');});
-  document.getElementById('a11y-contrast').addEventListener('click',function(){document.body.classList.toggle('high-contrast');});
+  /* נגישות */
+  document.getElementById('a11y').addEventListener('click',function(){document.body.classList.toggle('bigtext');});
 })();
 </script>
-
-<!-- 20/10/2026: ה-A/B של livui (sales/video) הוסר. הכפתור מוביל להדרכה החיה דרך /r/webinar-guide1, והקליק נספר שם. -->
-
-<!-- מדידת כניסה (22/09/2026): אותו ביקון כמו בדפי mominvest-guides, page=guide1, כדי לדעת כמה פותחות את המדריך -->
+<!--TRACKING2-START-->
 <script>
 (function(){
   var TRACK = "https://academy.mominvest.co.il/guide-hit";
@@ -657,5 +641,6 @@ src="https://www.facebook.com/tr?id=1820166155346211&ev=ViewContent&noscript=1" 
   } catch(e){}
 })();
 </script>
+<!--TRACKING2-END-->
 </body>
 </html>
