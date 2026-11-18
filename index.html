@@ -293,20 +293,8 @@ button{font-family:var(--f);cursor:pointer}
   <div class="saved"><label for="save-subs">כמה ביטלת בחודש?</label><span class="inp"><input id="save-subs" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
 </section>
 
-<section class="scr creambg st" id="st-card" data-k="card">
-  <span class="tag">תחנה 2 · 5 דקות לכל כרטיס</span>
-  <div class="sthead"><span class="ico">💳</span><div><h2 class="mid">דמי כרטיס<br>האשראי</h2><span class="worth">15 עד 30 ₪ לכל כרטיס</span></div></div>
-  <p class="lead">עמלה שכמעט תמיד אפשר לקבל עליה פטור, רק כי ביקשת. אני הורדתי 60 ₪ בחודש משלושה כרטיסים.</p>
-  <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-card">היי, אני מחזיקה בכרטיס שלכם ומשלמת דמי כרטיס כל חודש.
-אני מבקשת פטור קבוע מדמי הכרטיס.
-אם אין אפשרות לפטור, אני שוקלת לבטל את הכרטיס ולהתרכז בכרטיס אחר שיש לי.
-מה אתם יכולים לעשות בשבילי?</p><button class="copy" type="button" data-copy="sc-card">📋 העתקת התסריט</button></div>
-  <div class="tip"><b>איפה מתקשרים?</b> המספר מודפס על גב הכרטיס. וכשאת כבר על הקו, בקשי פטור גם מ"דמי גביית תשלום נדחה", אם יש.</div>
-  <div class="saved"><label for="save-card">כמה הורדת בחודש?</label><span class="inp"><input id="save-card" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
-</section>
-
 <section class="scr pinkbg st" id="st-tax" data-k="tax">
-  <span class="tag">תחנה 3 · 2 דקות בדיקה</span>
+  <span class="tag">תחנה 2 · 2 דקות בדיקה</span>
   <div class="sthead"><span class="ico">💸</span><div><h2 class="mid">החזר<br>מס</h2><span class="worth">אפשר לבקש עד 6 שנים אחורה</span></div></div>
   <p class="lead">הרבה שכירות משלמות יותר מס ממה שצריך, ולא יודעות. את ההחזר אפשר לבקש עד שש שנים אחורה.</p>
   <p style="font-weight:800">סמני מה קרה לך בשש השנים האחרונות:</p>
@@ -323,6 +311,18 @@ button{font-family:var(--f);cursor:pointer}
   <p class="small" style="opacity:.95">הבדיקה נפתחת באתר Finupp מבית מיטב. ניתן ורצוי לשתף גם את בן/בת הזוג 💞</p>
   <div class="tip"><b>גם אם לא סימנת כלום</b> שווה לבדוק. יש עוד סיבות להחזר, כמו מגורים ביישוב עם הטבת מס או ילד עם צרכים מיוחדים. הבדיקה נעשית באתר חיצוני ולא על ידי אמא משקיעה, וזה לא ייעוץ מס.</div>
   <div class="saved"><label for="save-tax">קיבלת החזר? רשמי כמה (נחלק ל-12 בשבילך)</label><span class="inp"><input id="save-tax" type="number" inputmode="numeric" min="0" placeholder="0" data-divisor="12">₪</span><button class="go" type="button">מצאתי! 🎉</button><span class="pm" id="pm-tax"></span></div>
+</section>
+
+<section class="scr creambg st" id="st-card" data-k="card">
+  <span class="tag">תחנה 3 · 5 דקות לכל כרטיס</span>
+  <div class="sthead"><span class="ico">💳</span><div><h2 class="mid">דמי כרטיס<br>האשראי</h2><span class="worth">15 עד 30 ₪ לכל כרטיס</span></div></div>
+  <p class="lead">עמלה שכמעט תמיד אפשר לקבל עליה פטור, רק כי ביקשת. אני הורדתי 60 ₪ בחודש משלושה כרטיסים.</p>
+  <div class="script"><span class="lb">התסריט שלך · העתיקי וקראי</span><p id="sc-card">היי, אני מחזיקה בכרטיס שלכם ומשלמת דמי כרטיס כל חודש.
+אני מבקשת פטור קבוע מדמי הכרטיס.
+אם אין אפשרות לפטור, אני שוקלת לבטל את הכרטיס ולהתרכז בכרטיס אחר שיש לי.
+מה אתם יכולים לעשות בשבילי?</p><button class="copy" type="button" data-copy="sc-card">📋 העתקת התסריט</button></div>
+  <div class="tip"><b>איפה מתקשרים?</b> המספר מודפס על גב הכרטיס. וכשאת כבר על הקו, בקשי פטור גם מ"דמי גביית תשלום נדחה", אם יש.</div>
+  <div class="saved"><label for="save-card">כמה הורדת בחודש?</label><span class="inp"><input id="save-card" type="number" inputmode="numeric" min="0" placeholder="0">₪</span><button class="go" type="button">מצאתי! 🎉</button></div>
 </section>
 
 <section class="scr dark st" id="st-bank" data-k="bank">
@@ -549,7 +549,7 @@ button{font-family:var(--f);cursor:pointer}
 (function(){
   var KEY='foundMoneyGuide.v1', SCAN='leaksScan.v1';
   var ST=[ // key, emoji, short name, monthly range [lo,hi] (null = לא נספר בטווח)
-    ['subs','👻','מנויים',[50,300]],['card','💳','אשראי',[15,60]],['tax','💸','החזר מס',null],['bank','🏦','בנק',[20,40]],
+    ['subs','👻','מנויים',[50,300]],['tax','💸','החזר מס',null],['card','💳','אשראי',[15,60]],['bank','🏦','בנק',[20,40]],
     ['cell','📱','סלולר',[30,60]],['net','🌐','אינטרנט',[40,80]],['fixed','🏋️','כושר וחניה',[50,250]],
     ['power','⚡','חשמל',[15,40]],['carins','🚗','ביטוח רכב',[20,60]],['ins','🛡️','ביטוחים כפולים',[30,150]],
     ['loans','📉','הלוואות',[30,150]],['pension','🧾','פנסיה',null],['idle','🛋️','העו״ש',null],['har','💰','הר הכסף',null]
