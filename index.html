@@ -81,6 +81,9 @@ button{font-family:var(--f);cursor:pointer}
 .wa-what{font-size:18px;font-weight:800;margin:0}.wa-what span{font-weight:600}
 .wa-pink{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--pink);color:#fff;border-radius:18px;padding:16px 22px;font-weight:900;font-size:18px;line-height:1.35;text-decoration:none;box-shadow:0 14px 30px -14px rgba(255,95,162,.8)}
 .wa-pink svg{width:24px;height:24px;flex:none;fill:currentColor}
+.wa-small{gap:12px;padding:22px 20px;max-width:400px;margin:0 auto;width:100%;box-sizing:border-box}
+.wa-small .wa-h{font-size:22px}.wa-small .wa-shot-link{max-width:280px;margin:0 auto}
+.wa-small .wa-what{font-size:15.5px}.wa-small .wa-pink{font-size:15px;padding:11px 18px;font-weight:800}.wa-small .wa-pink svg{width:20px;height:20px}
 .cta:focus-visible,.stop:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
 
 /* איך זה עובד */
@@ -528,14 +531,6 @@ button{font-family:var(--f);cursor:pointer}
   <p class="small">* חישוב להמחשה בלבד, לפי תשואה שנתית ממוצעת בהתבסס על נתוני עבר של שוקי ההון. תשואות עבר אינן מבטיחות תשואות עתיד. אין באמור ייעוץ השקעות או המלצה.</p>
 </section>
 
-<!-- קבוצת הווטסאפ -->
-<section class="scr sunbg center">
-  <h2 class="wa-h">רגע, את עוד לא שם?</h2>
-    <a class="wa-shot-link" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener" aria-label="להצטרפות לקבוצת הווטסאפ"><img class="wa-shot" src="wa-group.jpg" width="900" height="444" alt="אמא משקיעה קהילה מספר 10: קבוצת ווטסאפ עם 457 חברות" loading="lazy"></a>
-    <p class="wa-what">מה מחכה לך בפנים?<br><span>מדריכים חינמיים ומתנות ששמורות רק לקהילה שלנו</span></p>
-    <a class="wa-pink" id="cta-whatsapp" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22.5l5.85-1.53a9.83 9.83 0 0 0 4.19.94h.01c5.43 0 9.86-4.43 9.86-9.87A9.8 9.8 0 0 0 19 4.9a9.8 9.8 0 0 0-6.96-2.9Z"/></svg> להצטרפות בחינם לקבוצת הווטסאפ של האמהות המשקיעות</a>
-</section>
-
 <!-- הצעד הבא -->
 <section class="scr pinkbg center">
   <span class="tag">הצעד הבא שלך</span>
@@ -548,6 +543,14 @@ button{font-family:var(--f);cursor:pointer}
   </svg>
   <p class="lead">בהדרכה החיה הקרובה שלי אני משתפת את השיטה המלאה: איך לבנות לכל ילד גב כלכלי של חצי מיליון ₪, מהכסף שכבר נכנס הביתה. שעה בזום, בלי עלות.</p>
   <a class="cta" href="https://academy.mominvest.co.il/r/webinar-guide1">לשריון מקום בהדרכה החיה »</a>
+</section>
+
+<!-- קבוצת הווטסאפ -->
+<section class="scr sunbg center wa-small">
+  <h2 class="wa-h">רגע, את עוד לא שם?</h2>
+    <a class="wa-shot-link" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener" aria-label="להצטרפות לקבוצת הווטסאפ"><img class="wa-shot" src="wa-group.jpg" width="900" height="444" alt="אמא משקיעה קהילה מספר 10: קבוצת ווטסאפ עם 457 חברות" loading="lazy"></a>
+    <p class="wa-what">מה מחכה לך בפנים?<br><span>מדריכים חינמיים ומתנות ששמורות רק לקהילה שלנו</span></p>
+    <a class="wa-pink" id="cta-whatsapp" href="https://chat.whatsapp.com/IrwUx0BayJxI6jLWnw9wg5?mode=gi_t" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22.5l5.85-1.53a9.83 9.83 0 0 0 4.19.94h.01c5.43 0 9.86-4.43 9.86-9.87A9.8 9.8 0 0 0 19 4.9a9.8 9.8 0 0 0-6.96-2.9Z"/></svg> להצטרפות בחינם לקבוצת הווטסאפ של האמהות המשקיעות</a>
 </section>
 
 <p class="disc">המדריך נכתב באהבה על ידי עדי סומך · אמא משקיעה. המידע כללי בלבד ואינו ייעוץ פיננסי, ביטוחי, פנסיוני או ייעוץ השקעות, ואינו מותאם למצב האישי שלך. הטווחים במדריך הם הערכה להמחשה ולא הבטחה. מספרי הטלפון והקישורים נכונים למועד הפרסום. הסכומים שאת רושמת נשמרים רק בדפדפן שלך. בדיקת החזר המס נעשית באתר Finupp מבית מיטב ולא על ידי אמא משקיעה, ואינה ייעוץ מס.<br>
